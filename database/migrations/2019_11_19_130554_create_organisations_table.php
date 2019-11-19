@@ -18,8 +18,14 @@ class CreateOrganisationsTable extends Migration
             $table->integer('SIRET');
             $table->string('RaisonsSociales');
             $table->string('SigleOrg');
-            $table->string('LogoUrl');
-
+            $table->text('LogoUrl');
+            $table->text('Activite');
+            $table->integer('Telephone');
+            $table->integer('NbSalaries');
+            $table->text('SiteUrl');
+            $table->text('Adresse');
+            $table->foreign('IdCP')->references('Id')->on('codePostal');
+            $table->foreign('IdTypeOrga')->references('Id')->on('TypeOrganisation');
             $table->timestamps();
         });
     }
