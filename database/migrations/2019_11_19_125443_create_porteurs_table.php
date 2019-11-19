@@ -22,8 +22,8 @@ class CreatePorteursTable extends Migration
             $table->string('Mdp');
             $table->double('Telephone');
             $table->string('Poste');
+            $table->integer('IdOrga');
             $table->foreign('IdOrga')->references('Id')->on('organisations');
-            $table->foreign('IdCP')->references('Id')->on('codePostal');
             $table->timestamps();
         });
     }

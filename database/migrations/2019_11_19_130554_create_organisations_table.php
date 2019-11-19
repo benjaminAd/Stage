@@ -16,6 +16,9 @@ class CreateOrganisationsTable extends Migration
         Schema::create('organisations', function (Blueprint $table) {
             $table->increments('Id');
             $table->integer('SIRET');
+            $table->integer('IdCP');
+            $table->integer('IdTypeOrga');
+            $table->integer('IdPorteur');
             $table->string('RaisonsSociales');
             $table->string('SigleOrg');
             $table->text('LogoUrl');
@@ -25,7 +28,8 @@ class CreateOrganisationsTable extends Migration
             $table->text('SiteUrl');
             $table->text('Adresse');
             $table->foreign('IdCP')->references('Id')->on('codePostal');
-            $table->foreign('IdTypeOrga')->references('Id')->on('TypeOrganisation');
+            $table->foreign('IdTypeOrga')->references('Id')->on('typeOrganisation');
+            $table->foreign('IdPorteur')->references('Id')->on('porteurs');
             $table->timestamps();
         });
     }

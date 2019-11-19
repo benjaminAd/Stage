@@ -21,9 +21,7 @@ Route::get('login', function () {
 Route::get('ourTeam', function () {
     return view('Maquette Notre_equipe.section_equipe');
 });
-Route::get('SubscribePortProjet', function () {
-    return view('Maquette InscriptionPorteurProjet.SusbcribePortProjet');
-});
+Route::get('SubscribePortProjet', 'PorteurController@index');
 Route::get('SubscribeOrga', function () {
     return view('Maquette InscriptionOrganisation.SubscribeOrganisation');
 });
@@ -45,3 +43,4 @@ Route::get('landingPor', function () {
 Route::get('Contact', function () {
     return view('maquette contact.contact');
 });
+Route::resource('Porteur','PorteurController');
