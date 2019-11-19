@@ -7,7 +7,7 @@
 @endsection
 @section('body')
     <div class="d-flex justify-content-center align-items-center divCon mt-4">
-        <form class="text-center border border-light p-5 divConnect" action="{{url(Porteur)}}">
+        <form class="text-center border border-light p-5 divConnect" action="#">
             <img class="img-fluid rounded-circle" src="./img/fav_png150vct.png" alt="Logo"/>
             <p class="h4 mb-4">Se Connecter</p>
 

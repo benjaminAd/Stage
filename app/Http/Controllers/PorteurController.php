@@ -51,7 +51,7 @@ class PorteurController extends Controller
                 'Poste' => $request->get('postEntreprise')
             ]);
             $porteur->save();
-            return redirect()->route('Maquette Connexion.connexion')->with('sucess', 'Porteur ajouté');
+            return redirect()->route('connect')->with('sucess', 'Porteur ajouté');
         } else {
             return redirect()->route('Maquette InscriptionPorteurProjet.SusbcribePortProjet')->with('fail', 'Mots de passe différents');
         }
