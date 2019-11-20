@@ -17,13 +17,11 @@ Route::get('/', function () {
 
 Route::get('login', function () {
     return view('Maquette Connexion.connexion');
-});
+})->name('connect');
 Route::get('ourTeam', function () {
     return view('Maquette Notre_equipe.section_equipe');
 });
-Route::get('SubscribePortProjet', function () {
-    return view('Maquette InscriptionPorteurProjet.SusbcribePortProjet');
-});
+Route::get('SubscribePortProjet', 'PorteurController@index')->name('PortProjetSub');
 Route::get('SubscribeOrga', function () {
     return view('Maquette InscriptionOrganisation.SubscribeOrganisation');
 });
@@ -45,3 +43,4 @@ Route::get('landingPor', function () {
 Route::get('Contact', function () {
     return view('maquette contact.contact');
 });
+Route::resource('Porteur','PorteurController');
