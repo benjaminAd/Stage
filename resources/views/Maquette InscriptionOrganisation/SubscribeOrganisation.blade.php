@@ -13,7 +13,7 @@
             <p class="h4 mb-4 text-center">Inscrire son Organisation</p>
             <div class="form-group">
                 <label>SIRET :</label>
-                <input type="number" class="form-control" id="siret" placeholder="SIRET de l'Organisation..."/>
+                <input type="number" class="form-control" id="siret" placeholder="ex : 362 521 879 00034"/>
                 <div class="invalid-feedback">
                     Entrez le SIRET de votre Organisation.
                 </div>
@@ -27,7 +27,7 @@
                         <option value="association">Association</option>
                     </select>
                     &nbsp;&nbsp;&nbsp;
-                    <input type="text" class="form-control col" id="label" placeholder="Label de l'Organisation..."
+                    <input type="text" class="form-control col" id="label" placeholder="ex : Connectanou"
                            required/>
                     <div class="invalid-feedback">
                         Entrez le label de votre entreprise.
@@ -36,28 +36,29 @@
             </div>
             <div class="form-group">
                 <label>Raison social</label>
-                <input type="text" id="social" class="form-control" placeholder="Raison social..." required/>
+                <input type="text" id="social" class="form-control" placeholder="ex : ...." required/>
                 <div class="invalid-feedback">
                     Entrez une raison social.
                 </div>
             </div>
             <div class="form-group">
                 <label>Téléphone</label>
-                <input type="tel" id="telephone" class="form-control" placeholder="Téléphone..." required/>
+                <input type="tel" id="telephone" class="form-control" placeholder="ex : 0262 xx xx xx" required/>
                 <div class="invalid-feedback">
                     Entrez un numéro de téléphone.
                 </div>
             </div>
             <div class="form-group">
                 <label>Lien vers le site Internet de l'Organisation<span id="important">*</span></label>
-                <input type="url" id="site" class="form-control" placeholder="Site internet..." required/>
+                <input type="url" id="site" class="form-control" placeholder="ex : connectanou.re" required/>
                 <div class="invalid-feedback">
                     Entrez une URL.
                 </div>
             </div>
             <div class="form-group">
                 <label>Adresse de l'Organisation</label>
-                <input type="text" id="adresse" class="form-control" placeholder="Adresse Organisation..." required/>
+                <input type="text" id="adresse" class="form-control" placeholder="ex : 70 Avenue Georges Brassens"
+                       required/>
                 <div class="invalid-feedback">
                     Entrez une adresse.
                 </div>
@@ -65,9 +66,9 @@
             <div class="form-group">
                 <label>Code Postal et Ville</label>
                 <div class="form-inline form-group" id="Organisation">
-                    <input type="number" class="form-control col" placeholder="ex : 97441..." required/>
+                    <input type="number" class="form-control col" placeholder="ex : 97490" required/>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" class="form-control col" placeholder="ex : Saint-Denis..."
+                    <input type="text" class="form-control col" placeholder="ex : Sainte-Clotilde"
                            required/>
                     <div class="invalid-feedback">
                         Entrez le label de votre entreprise.
@@ -76,14 +77,15 @@
             </div>
             <div class="form-group">
                 <label>Nombre de Salariés</label>
-                <input type="number" id="salarié" class="form-control" placeholder="Nombre de salarié..." required/>
+                <input type="number" id="salarié" class="form-control" placeholder="ex : 60" required/>
                 <div class="invalid-feedback">
                     Entrez le nombre de salarié.
                 </div>
             </div>
             <div class="form-group">
                 <label>Activié de l'Organisation</label>
-                <textarea class="form-control" id="activite" rows="3" placeholder="Activité de l'Organisation..."
+                <textarea class="form-control" id="activite" rows="3" placeholder="Ex : Association qui permet à de jeunes étudiants
+en informatique à gérer différents projets comme la création d'un site internet ou la création d'une application mobile pour des Petites et Moyennes Entreprises. "
                           required></textarea>
             </div>
             <div class="form-group files">
@@ -95,12 +97,13 @@
             </div>
             <div class="custom-control custom-checkbox form-group">
                 <input type="checkbox" class="custom-control-input" id="customCheck1" required/>
-                <label class="custom-control-label" for="customCheck1">J'accepte les conditions et la
-                    <a href="#" class="lien">Politique de Confidentialités</a> de
-                    Connectanou</label>
-                <div class="invalid-feedback">
-                    Veuillez cocher la case.
-                </div>
+                <label class="custom-control-label" for="customCheck1">En cochant cette case, j'accepte que mes
+                    informations saisies soient utilisées<br/> uniquement dans le cadre <a href="#"
+                                                                                           class="lien">légale</a> dans
+                    l'association.
+                    <div class="invalid-feedback">
+                        Veuillez cocher la case.
+                    </div>
             </div>
             <div class="g-recaptcha form-group" data-sitekey="6LeTmMAUAAAAADw7uH0DmeFBI9x0YeqhCZos-AFR"></div>
             <!-- <script src="https://www.google.com/recaptcha/api.js?render=6LdxmMAUAAAAAGaKb_PBUkAazJGtn_kBjNI1zViW"></script>
