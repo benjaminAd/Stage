@@ -7,7 +7,8 @@
 @endsection
 @section('body')
     <div class="d-flex justify-content-center align-items-center divCon mt-5">
-        <form class="border border-light p-5 divConnect needs-validation" action="{{url('Porteur')}}" method="post" novalidate>
+        <form class="border border-light p-5 divConnect needs-validation" action="{{url('Porteur')}}" method="post"
+              novalidate>
             {{csrf_field()}}
             <img class="img-fluid rounded-circle mx-auto d-block" src="./img/fav_png150vct.png" alt="Logo"/>
             <p class="h4 mb-4 text-center">S'inscrire en tant que Porteur de Projet</p>
@@ -37,10 +38,22 @@
                         <option value="entreprise">Entreprise</option>
                         <option value="association">Association</option>
                     </select>
-                    &nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;
                     <!-- <select class="custom-select col" id="nomorganisation" disabled>
                                 <option selected>Choisissez le nom de votre Organisation</option>
                             </select> -->
+                    <select name="Nom" class="custom-select col" id="nomassociation">
+                        <option value="" selected>Choisissez le nom de votre Association</option>
+                        <option value="0">Connectanou</option>
+                        <option value="1">Croix Rouge</option>
+                        <option value="ajouter">Ajouter</option>
+                    </select>
+                    <select name="Nom" class="custom-select col" id="nomentreprise">
+                        <option value="" selected>Choisissez le nom de votre Entreprise</option>
+                        <option value="3">Apple</option>
+                        <option value="4">Facebook</option>
+                        <option value="ajouter">Ajouter</option>
+                    </select>
                     <input type="text" class="form-control col" id="nomorganisation" placeholder="ex : Connectanou"
                            disabled/>
                 </div>
@@ -157,5 +170,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
-    <script src="js/script_PortProjet.js"></script>
+    <script src="./js/script_PortProjet.js"></script>
 @endsection

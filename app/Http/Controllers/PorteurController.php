@@ -53,7 +53,7 @@ class PorteurController extends Controller
             $porteur->save();
             return redirect()->route('connect')->with('sucess', 'Porteur ajouté');
         } else {
-            return redirect()->route('Maquette InscriptionPorteurProjet.SusbcribePortProjet')->with('fail', 'Mots de passe différents');
+            return redirect()->route('PortProjetSub')->with('fail', 'Mots de passe différents');
         }
     }
 

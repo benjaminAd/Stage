@@ -21,7 +21,7 @@ Route::get('login', function () {
 Route::get('ourTeam', function () {
     return view('Maquette Notre_equipe.section_equipe');
 });
-Route::get('SubscribePortProjet', 'PorteurController@index');
+Route::get('SubscribePortProjet', 'PorteurController@index')->name('PortProjetSub');
 Route::get('SubscribeOrga', function () {
     return view('Maquette InscriptionOrganisation.SubscribeOrganisation');
 });

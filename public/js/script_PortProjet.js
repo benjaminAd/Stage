@@ -1,55 +1,38 @@
 $(function () {
+    $("#nomorganisation").show();
+    $('#nomentreprise').hide();
+    $('#nomassociation').hide();
     $('select[name="typeOrganisation"]').change(function () {
         // lorsqu'on change de valeur dans la liste
         var valeur = $(this).val(); // valeur sélectionnée
         if (valeur == 'particulier') {
             console.log('je suis un ' + valeur);
-            $('#nomorganisation').remove();
-            $('#postparticulier').remove();
-            $('#nomentreprise').remove();
-            $('#nomassociation').remove();
             $('.importSelect').show();
             $('#posteEntreprise').prop('required', true);
-            var input = $(
-                ' <input type="text" class="form-control col" id="nomorganisation" placeholder="ex : Connectanou" disabled/>'
-            );
-            $('#Organisation').append(input);
+            $("#nomorganisation").show();
+            $('#nomentreprise').hide();
+            $('#nomassociation').hide();
         } else if (valeur == 'entreprise') {
             console.log('je suis une ' + valeur);
-            $('#nomorganisation').remove();
-            $('#postparticulier').remove();
-            $('#nomentreprise').remove();
-            $('#nomassociation').remove();
             $('.importSelect').hide();
+            $('#nomassociation').hide();
+            $("#nomorganisation").hide();
             $('#posteEntreprise').prop('required', false);
-            var select = $(
-                '<select name="Nom" class="custom-select col" id="nomentreprise"><option value="" selected>Choisissez le nom de votre Entreprise</option><option value="3">Apple</option><option value="4">Facebook</option><option value="ajouter">Ajouter</option></select>'
-            );
-            $('#Organisation').append(select);
+            $('#nomentreprise').show();
         } else if (valeur == 'association') {
             console.log('je suis une ' + valeur);
-            $('#nomorganisation').remove();
-            $('#postparticulier').remove();
-            $('#nomentreprise').remove();
-            $('#nomassociation').remove();
             $('.importSelect').hide();
             $('#posteEntreprise').prop('required', false);
-            var select = $(
-                '<select name="Nom" class="custom-select col" id="nomassociation"><option value="" selected>Choisissez le nom de votre Association</option><option value="0">Connectanou</option><option value="1">Croix Rouge</option><option value="ajouter">Ajouter</option></select>'
-            );
-            $('#Organisation').append(select);
+            $('#nomentreprise').hide();
+            $("#nomorganisation").hide();
+            $('#nomassociation').show();
         } else if (valeur == 'organisation') {
             console.log('je suis une organisation');
-            $('#nomorganisation').remove();
-            $('#postparticulier').remove();
-            $('#nomentreprise').remove();
-            $('#nomassociation').remove();
             $('.importSelect').show();
+            $('#nomassociation').hide();
+            $('#nomentreprise').hide();
             $('#posteEntreprise').prop('required', true);
-            var input = $(
-                ' <input type="text" class="form-control col" id="nomorganisation" placeholder="ex : Connectanou" disabled/>'
-            );
-            $('#Organisation').append(input);
+            $("#nomorganisation").show();
         }
         $("select[name='Nom']").change(function () {
             var val2 = $(this).val();
