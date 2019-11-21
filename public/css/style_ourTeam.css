@@ -1,33 +1,31 @@
 /* FontAwesome for working BootSnippet :> */
-
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 
-
-#favicon{
+#favicon {
     width: 8.5%;
-    height:10%;
-    
-    
+    height: 10%;
+
+
 }
 
 
 section {
-    
+
     padding: 60px 0;
-    
-    
+
+
 }
 
 section .section-title {
     text-align: center !important;
     color: rgb(68, 73, 85) !important;
-    margin-bottom: 50px !important ;
-    text-transform: uppercase !important ;
+    margin-bottom: 50px !important;
+    text-transform: uppercase !important;
 }
 
 #team .card {
-    border: none !important ;
+    border: none !important;
     background: none !important;
 }
 
