@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Porteur;
 use App\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class PorteurController extends Controller
@@ -16,7 +17,12 @@ class PorteurController extends Controller
      */
     public function index()
     {
-        return view('Maquette InscriptionPorteurProjet.SusbcribePortProjet');
+        $entreprises = DB::table('organisations')->select('RaisonSociale', 'Id')->where('IdTypeOrga', 1)->get();
+        $associations = DB::table('organisations')->select('RaisonSociale', 'Id')->where('IdTypeOrga', 2)->get();
+        return view('Maquette InscriptionPorteurProjet.SusbcribePortProjet', [
+            'entreprises' => $entreprises,
+            'associations' => $associations
+        ]);
     }
 
     /**
@@ -51,6 +57,8 @@ class PorteurController extends Controller
                 'Poste' => $request->get('postEntreprise')
             ]);
             $porteur->save();
+            $id = DB::table('porteurs')->where('Login', $request->get('pseudo'))->value('Id');
+            DB::table('organisations')->where('Id', $request->get('Nom'))->update(['IdPorteur' => $id]);
             return redirect()->route('connect')->with('sucess', 'Porteur ajouté');
         } else {
             return redirect()->route('PortProjetSub')->with('fail', 'Mots de passe différents');

@@ -8,7 +8,8 @@
 @section('body')
     <!-- Default form login -->
     <div class="d-flex justify-content-center align-items-center divCon mt-5">
-        <form class="border border-light p-5 divConnect needs-validation" method="post" action="{{url('Organisation')}}"
+        <form class="border border-light p-5 divConnect needs-validation" enctype="multipart/form-data" method="post"
+              action="{{url('Organisation')}}"
               novalidate>
             {{csrf_field()}}
             <img class="img-fluid rounded-circle mx-auto d-block" src="./img/fav_png150vct.png" alt="Logo"/>
@@ -25,8 +26,11 @@
                 <div class="form-inline form-group" id="Organisation">
                     <select name="typeOrganisation" class="custom-select col-3" id="typeOrganisation">
                         <option value="organisation" selected>Type</option>
-                        <option value="entreprise">Entreprise</option>
-                        <option value="association">Association</option>
+                        {{-- <option value="entreprise">Entreprise</option>
+                         <option value="association">Association</option>--}}
+                        @foreach($types as $type)
+                            <option value="{{$type->Id}}">{{$type->TypeOrganisation}}</option>
+                        @endforeach
                     </select>
                     &nbsp;&nbsp;&nbsp;
                     <input type="text" name="RaisonSociale" class="form-control col" id="label"
@@ -93,7 +97,7 @@ en informatique à gérer différents projets comme la création d'un site inter
             </div>
             <div class="form-group files">
                 <label>Importez votre Logo<span id="important">*</span></label>
-                <input type="file" class="form-control" required>
+                <input type="file" name="select_file" class="form-control" required>
                 <div class="invalid-feedback">
                     Importez votre Logo.
                 </div>

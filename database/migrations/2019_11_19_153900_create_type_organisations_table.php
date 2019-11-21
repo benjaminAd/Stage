@@ -15,7 +15,7 @@ class CreateTypeOrganisationsTable extends Migration
     {
         Schema::create('type_organisations', function (Blueprint $table) {
             $table->increments('Id');
-            $table->string('LabelOrg');
+            $table->string('TypeOrganisation');
             $table->timestamps();
         });
     }

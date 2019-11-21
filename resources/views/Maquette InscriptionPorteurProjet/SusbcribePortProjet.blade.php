@@ -44,14 +44,21 @@
                             </select> -->
                     <select name="Nom" class="custom-select col" id="nomassociation">
                         <option value="" selected>Choisissez le nom de votre Association</option>
-                        <option value="0">Connectanou</option>
-                        <option value="1">Croix Rouge</option>
+                        {{--<option value="0">Connectanou</option>
+                        <option value="1">Croix Rouge</option>--}}
+
+                        @foreach($associations as $association)
+                            <option value="{{$association->Id}}">{{$association->RaisonSociale}}</option>
+                        @endforeach
                         <option value="ajouter">Ajouter</option>
                     </select>
                     <select name="Nom" class="custom-select col" id="nomentreprise">
                         <option value="" selected>Choisissez le nom de votre Entreprise</option>
-                        <option value="3">Apple</option>
-                        <option value="4">Facebook</option>
+                        {{-- <option value="3">Apple</option>
+                         <option value="4">Facebook</option>--}}
+                        @foreach($entreprises as $entreprise)
+                            <option value="{{$entreprise->Id}}">{{$entreprise->RaisonSociale}}</option>
+                        @endforeach
                         <option value="ajouter">Ajouter</option>
                     </select>
                     <input type="text" class="form-control col" id="nomorganisation" placeholder="ex : Connectanou"
