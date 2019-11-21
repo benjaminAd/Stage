@@ -18,7 +18,9 @@ class CreatePorteursTable extends Migration
             $table->string('Nom');
             $table->string('Prenom');
             $table->string('Email');
+            //$table->unique('Email', 'unique_email');
             $table->string('Login');
+           // $table->unique('Login', 'unique_Login');
             $table->string('Mdp');
             $table->double('Telephone');
             $table->string('Poste');

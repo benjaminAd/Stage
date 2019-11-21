@@ -19,7 +19,7 @@ class CreateOrganisationsTable extends Migration
             $table->integer('IdCP');
             $table->integer('IdTypeOrga');
             $table->integer('IdPorteur');
-            $table->string('RaisonsSociales');
+            $table->string('RaisonSociale');
             $table->string('SigleOrg');
             $table->text('LogoUrl');
             $table->text('Activite');

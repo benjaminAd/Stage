@@ -10,7 +10,7 @@
     <div class="d-flex justify-content-center align-items-center divCon mt-4">
         <form class="text-center border border-light p-5 divConnect" action="#!">
             <img class="img-fluid rounded-circle" src="./img/fav_png150vct.png" alt="Logo"/>
-            <p class="h4 mb-4">Récupérer mon Mot de Passe</p>
+            <p class="h4 mb-4">Récupérez votre Mot de Passe</p>
 
             <!-- Email -->
             <input type="email" id="defaultLoginFormEmail" class="form-control mb-4" placeholder="Adresse Mail"
