@@ -35,20 +35,23 @@ class OrganisationController extends Controller
      */
     public function store(Request $request)
     {
+
         $organisation = new Organisations([
             'SIRET' => $request->get('siret'),
-            'IdCP' => $request->get(''),
-            'IdTypeOrga' => $request->get(''),
-            'IdPorteur' => $request->get(''),
+            'IdCP' => 0,
+            'IdTypeOrga' => 1,
+            'IdPorteur' => 2,
             'RaisonSociale' => $request->get('RaisonSociale'),
             'SigleOrg' => $request->get('sigle'),
-            'LogoURL' => $request->get(''),
+            'LogoURL' => 'apple.com',
             'Activite' => $request->get('activite'),
             'Telephone' => $request->get('telephone'),
             'NbSalaries' => $request->get('salariés'),
-            'SiteUrl' =>$request->get('site'),
-            'Adresse'=>$request->get('adresse')
+            'SiteUrl' => $request->get('site'),
+            'Adresse' => $request->get('adresse')
         ]);
+        $organisation->save();
+        return redirect()->route('PortProjetSub')->with('success', 'Organisation ajoutée');
     }
 
     /**
