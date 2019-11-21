@@ -8,7 +8,9 @@
 @section('body')
     <!-- Default form login -->
     <div class="d-flex justify-content-center align-items-center divCon mt-5">
-        <form class="border border-light p-5 divConnect needs-validation" action="{{url('Organisation')}}" novalidate>
+        <form class="border border-light p-5 divConnect needs-validation" method="post" action="{{url('Organisation')}}"
+              novalidate>
+            {{csrf_field()}}
             <img class="img-fluid rounded-circle mx-auto d-block" src="./img/fav_png150vct.png" alt="Logo"/>
             <p class="h4 mb-4 text-center">Inscrire son Organisation</p>
             <div class="form-group">
@@ -41,21 +43,24 @@
             </div>
             <div class="form-group">
                 <label>Téléphone</label>
-                <input type="tel" name="telephone" id="telephone" class="form-control" placeholder="ex : 0262xxxxxx" required/>
+                <input type="tel" name="telephone" id="telephone" class="form-control" placeholder="ex : 0262xxxxxx"
+                       required/>
                 <div class="invalid-feedback">
                     Entrez un numéro de téléphone.
                 </div>
             </div>
             <div class="form-group">
                 <label>Lien vers le site Internet de l'Organisation<span id="important">*</span></label>
-                <input type="url" name="site" id="site" class="form-control" placeholder="ex : connectanou.re" required/>
+                <input type="url" name="site" id="site" class="form-control" placeholder="ex : connectanou.re"
+                       required/>
                 <div class="invalid-feedback">
                     Entrez une URL.
                 </div>
             </div>
             <div class="form-group">
                 <label>Adresse de l'Organisation</label>
-                <input type="text" name="adresse" id="adresse" class="form-control" placeholder="ex : 70 Avenue Georges Brassens"
+                <input type="text" name="adresse" id="adresse" class="form-control"
+                       placeholder="ex : 70 Avenue Georges Brassens"
                        required/>
                 <div class="invalid-feedback">
                     Entrez une adresse.
