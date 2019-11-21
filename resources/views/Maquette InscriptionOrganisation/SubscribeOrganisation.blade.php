@@ -8,18 +8,18 @@
 @section('body')
     <!-- Default form login -->
     <div class="d-flex justify-content-center align-items-center divCon mt-5">
-        <form class="border border-light p-5 divConnect needs-validation" action="#" novalidate>
+        <form class="border border-light p-5 divConnect needs-validation" action="{{url('Organisation')}}" novalidate>
             <img class="img-fluid rounded-circle mx-auto d-block" src="./img/fav_png150vct.png" alt="Logo"/>
             <p class="h4 mb-4 text-center">Inscrire son Organisation</p>
             <div class="form-group">
                 <label>SIRET :</label>
-                <input type="number" class="form-control" id="siret" placeholder="ex : 362 521 879 00034"/>
+                <input type="number" name="siret" class="form-control" id="siret" placeholder="ex : 362 521 879 00034"/>
                 <div class="invalid-feedback">
                     Entrez le SIRET de votre Organisation.
                 </div>
             </div>
             <div class="form-group">
-                <label>Label de l'Organisation</label>
+                <label>Raison sociale</label>
                 <div class="form-inline form-group" id="Organisation">
                     <select name="typeOrganisation" class="custom-select col-3" id="typeOrganisation">
                         <option value="organisation" selected>Type</option>
@@ -27,7 +27,8 @@
                         <option value="association">Association</option>
                     </select>
                     &nbsp;&nbsp;&nbsp;
-                    <input type="text" class="form-control col" id="label" placeholder="ex : Connectanou"
+                    <input type="text" name="RaisonSociale" class="form-control col" id="label"
+                           placeholder="ex : Connectanou"
                            required/>
                     <div class="invalid-feedback">
                         Entrez le label de votre entreprise.
@@ -35,29 +36,26 @@
                 </div>
             </div>
             <div class="form-group">
-                <label>Raison social</label>
-                <input type="text" id="social" class="form-control" placeholder="ex : ...." required/>
-                <div class="invalid-feedback">
-                    Entrez une raison social.
-                </div>
+                <label>Sigle</label>
+                <input type="text" id="sigle" name="sigle" class="form-control" placeholder="ex : AA" required/>
             </div>
             <div class="form-group">
                 <label>Téléphone</label>
-                <input type="tel" id="telephone" class="form-control" placeholder="ex : 0262 xx xx xx" required/>
+                <input type="tel" name="telephone" id="telephone" class="form-control" placeholder="ex : 0262xxxxxx" required/>
                 <div class="invalid-feedback">
                     Entrez un numéro de téléphone.
                 </div>
             </div>
             <div class="form-group">
                 <label>Lien vers le site Internet de l'Organisation<span id="important">*</span></label>
-                <input type="url" id="site" class="form-control" placeholder="ex : connectanou.re" required/>
+                <input type="url" name="site" id="site" class="form-control" placeholder="ex : connectanou.re" required/>
                 <div class="invalid-feedback">
                     Entrez une URL.
                 </div>
             </div>
             <div class="form-group">
                 <label>Adresse de l'Organisation</label>
-                <input type="text" id="adresse" class="form-control" placeholder="ex : 70 Avenue Georges Brassens"
+                <input type="text" name="adresse" id="adresse" class="form-control" placeholder="ex : 70 Avenue Georges Brassens"
                        required/>
                 <div class="invalid-feedback">
                     Entrez une adresse.
@@ -77,14 +75,14 @@
             </div>
             <div class="form-group">
                 <label>Nombre de Salariés</label>
-                <input type="number" id="salarié" class="form-control" placeholder="ex : 60" required/>
+                <input type="number" name="salariés" id="salarié" class="form-control" placeholder="ex : 60" required/>
                 <div class="invalid-feedback">
                     Entrez le nombre de salarié.
                 </div>
             </div>
             <div class="form-group">
-                <label>Activié de l'Organisation</label>
-                <textarea class="form-control" id="activite" rows="3" placeholder="Ex : Association qui permet à de jeunes étudiants
+                <label>Activité de l'Organisation</label>
+                <textarea class="form-control" name="activite" id="activite" rows="3" placeholder="Ex : Association qui permet à de jeunes étudiants
 en informatique à gérer différents projets comme la création d'un site internet ou la création d'une application mobile pour des Petites et Moyennes Entreprises. "
                           required></textarea>
             </div>

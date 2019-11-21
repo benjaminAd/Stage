@@ -22,9 +22,7 @@ Route::get('ourTeam', function () {
     return view('Maquette Notre_equipe.section_equipe');
 });
 Route::get('SubscribePortProjet', 'PorteurController@index')->name('PortProjetSub');
-Route::get('SubscribeOrga', function () {
-    return view('Maquette InscriptionOrganisation.SubscribeOrganisation');
-});
+Route::get('SubscribeOrga', 'OrganisationController@index')->name('SubscribeOrga');
 Route::get('SubscribeReaProjet', function () {
     return view('Maquette InscriptionReaProjet.SubscribeReaProjet');
 });
@@ -43,4 +41,5 @@ Route::get('landingPor', function () {
 Route::get('Contact', function () {
     return view('maquette contact.contact');
 });
-Route::resource('Porteur','PorteurController');
+Route::resource('Porteur', 'PorteurController');
+Route::resource('Organisation', 'OrganisationController');
