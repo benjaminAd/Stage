@@ -1,4 +1,5 @@
 $(function () {
+    $('select[name="typeOrganisation"]').val("");
     $("#nomorganisation").show();
     $('#nomentreprise').hide();
     $('#nomassociation').hide();
