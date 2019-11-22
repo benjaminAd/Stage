@@ -16,7 +16,11 @@ class OrganisationController extends Controller
     public function index()
     {
         $type = DB::table('type_organisations')->select('TypeOrganisation', 'Id')->get();
-        return view('Maquette InscriptionOrganisation.SubscribeOrganisation', ['types' => $type]);
+        $codePostaux = DB::table('code_postaux')->select('CodePostal', 'Ville', 'Id')->get();
+        return view('Maquette InscriptionOrganisation.SubscribeOrganisation', [
+            'types' => $type,
+            'codePostaux' => $codePostaux
+        ]);
     }
 
     /**
@@ -37,10 +41,10 @@ class OrganisationController extends Controller
      */
     public function store(Request $request)
     {
-
+        $idCP = DB::table('code_postaux')->where('CodePostal', $request->get('CodePostal'))->value('Id');
         $organisation = new Organisations([
             'SIRET' => $request->get('siret'),
-            'IdCP' => 0,
+            'IdCP' => $idCP,
             'IdTypeOrga' => 1,
             'IdPorteur' => 1,
             'RaisonSociale' => $request->get('RaisonSociale'),
