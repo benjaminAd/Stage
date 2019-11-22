@@ -58,7 +58,7 @@ class PorteurController extends Controller
             ]);
             $porteur->save();
             $id = DB::table('porteurs')->where('Login', $request->get('pseudo'))->value('Id');
-            DB::table('organisations')->where('Id', $request->get('Nom'))->update(['IdPorteur' => $id]);
+            DB::table('organisations')->where('Id', (int)$request->get('Nom'))->update(['IdPorteur' => $id]);
             return redirect()->route('connect')->with('sucess', 'Porteur ajouté');
         } else {
             return redirect()->route('PortProjetSub')->with('fail', 'Mots de passe différents');

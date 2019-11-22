@@ -45,8 +45,8 @@ class OrganisationController extends Controller
         $organisation = new Organisations([
             'SIRET' => $request->get('siret'),
             'IdCP' => $idCP,
-            'IdTypeOrga' => 1,
-            'IdPorteur' => 1,
+            'IdTypeOrga' => $request->get('typeOrganisation'),
+            'IdPorteur' => 10000,
             'RaisonSociale' => $request->get('RaisonSociale'),
             'SigleOrg' => $request->get('sigle'),
             'LogoURL' => 'un url quelconque',
