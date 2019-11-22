@@ -46,19 +46,34 @@ class PorteurController extends Controller
         $password = $request->get('password');
         $confPassword = $request->get('password2');
         if ($password == $confPassword) {
+            //Vérification si le client a choisi une entreprise, une association ou s'il est un particulier
+            if ($request->get('NomEntreprise') != "") {
+                $Orga = (int)$request->get('NomEntreprise'); //
+            } else if ($request->get('NomAssociation') != "") {
+                $Orga = (int)$request->get('NomAssociation');
+            } else if ($request->get('typeOrganisation') == "particulier") {
+                $Orga = null; //Si c'est un particulier alors il n'appartient à aucune Organisation
+            }
+            $this->validate($request, [
+                'password' => 'required|alphaNum|min:12',
+                'mail' => 'required|email',
+                'nom' => 'required',
+                'Poste' => 'required',
+                'mentionsLegales' => 'required'
+            ]);
             $porteur = new Porteur([
-                'IdOrga' => (int)$request->get('Nom'),
+                'IdOrga' => $Orga,
                 'Nom' => $request->get('nom'),
                 'Prenom' => $request->get('prenom'),
                 'Email' => $request->get('mail'),
                 'Login' => $request->get('pseudo'),
                 'Mdp' => Hash::make($password),
                 'Telephone' => $request->get('tel'),
-                'Poste' => $request->get('postEntreprise')
+                'Poste' => $request->get('Poste')
             ]);
             $porteur->save();
             $id = DB::table('porteurs')->where('Login', $request->get('pseudo'))->value('Id');
-            DB::table('organisations')->where('Id', (int)$request->get('Nom'))->update(['IdPorteur' => $id]);
+            DB::table('organisations')->where('Id', (int)$Orga)->update(['IdPorteur' => $id]);
             return redirect()->route('connect')->with('sucess', 'Porteur ajouté');
         } else {
             return redirect()->route('PortProjetSub')->with('fail', 'Mots de passe différents');
