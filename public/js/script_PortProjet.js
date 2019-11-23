@@ -1,5 +1,5 @@
 $(function () {
-    $('select[name="typeOrganisation"]').val("Type");
+    $('select[name="typeOrganisation"]').val("organisation");
     $("#nomorganisation").show();
     $('#nomentreprise').hide();
     $('#nomassociation').hide();
@@ -44,7 +44,7 @@ $(function () {
         });
     });
 });
-(function () {
+/*(function () {
     'use strict';
     window.addEventListener(
         'load',
@@ -68,4 +68,4 @@ $(function () {
         },
         false
     );
-})();
+})();*/
