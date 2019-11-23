@@ -41,5 +41,5 @@ Route::get('landingPor', function () {
 Route::get('Contact', function () {
     return view('maquette contact.contact');
 });
-Route::resource('Porteur', 'PorteurController');
+Route::resource('Porteur', 'PorteurController'); //Appel au controleur Porteur lors de la validation du formulaire d'inscription porteur
 Route::resource('Organisation', 'OrganisationController');
