@@ -11,6 +11,8 @@
             {{csrf_field()}}
             <img class="img-fluid rounded-circle mx-auto d-block" src="./img/fav_png150vct.png" alt="Logo"/>
             <p class="h4 mb-4 text-center">S'inscrire en tant que Porteur de Projet</p>
+            @if ($errors->has('Diffmdp')) <div class="alert alert-danger">{{ $errors->first('Diffmdp') }}</div> @endif
+            @if ($errors->has('MailUsed')) <div class="alert alert-danger">{{ $errors->first('MailUsed') }}</div> @endif
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -23,13 +25,14 @@
             <div class="row">
                 <div class="form-group col">
                     <label for="nom">Nom<span id="important">*</span></label>
-                    <input type="text" class="form-control" name="nom" id="nom" placeholder="ex : Hoareau" required/>
+                <input type="text" class="form-control" name="nom" id="nom" placeholder="ex : Hoareau" value="{{old('nom')}}"/>
+                @if ($errors->has('nom')) <div class="alert alert-danger">{{ $errors->first('nom') }}</div> @endif
                 </div>
                 <div class="form-group col">
                     <label class="text-left" for="prenom">Prénom<span id="important">*</span></label>
-                    <input type="text" name="prenom" class="form-control" id="prenom" placeholder="ex : Boris"
-                           required/>
-
+                    <input type="text" name="prenom" class="form-control" id="prenom" placeholder="ex : Boris"value="{{old('prenom')}}"
+                           />
+                    @if ($errors->has('prenom')) <div class="alert alert-danger">{{ $errors->first('prenom') }}</div> @endif
                 </div>
             </div>
             <div class="form-group">
@@ -71,40 +74,41 @@
             <div class="form-group" id="post">
                 <label for="Poste">Poste<span class="importSelect" id="important">*</span></label>
                 <input type="text" class="form-control" name="Poste" id="posteEntreprise"
-                       placeholder="ex : Gérant" required/>
-
+                       placeholder="ex : Gérant" value="{{old('Poste')}}"/>
+                @if ($errors->has('Poste')) <div class="alert alert-danger">{{ $errors->first('Poste') }}</div> @endif
             </div>
             <div class="form-group">
                 <label for="tel">Numéro de Téléphone</label>
-                <input type="tel" name="tel" id="telephone" class="form-control" placeholder="ex : 0692 xx xx xx"/>
-
+                <input type="tel" name="tel" id="telephone" class="form-control" placeholder="ex : 0692 xx xx xx" value="{{old('tel')}}"/>
+                @if ($errors->has('tel')) <div class="alert alert-danger">{{ $errors->first('tel') }}</div> @endif
             </div>
             <!-- Email -->
             <div class="form-group">
                 <label for="mail">Adresse E-Mail<span id="important">*</span></label>
-                <input type="email" id="mail" name="mail" class="form-control" placeholder="ex : HoareauBoris@gmail.com"
-                       required/>
-
+                <input type="email" id="mail" name="mail" class="form-control" placeholder="ex : HoareauBoris@gmail.com" value="{{old('mail')}}"
+                       />
+                @if ($errors->has('mail')) <div class="alert alert-danger">{{ $errors->first('mail') }}</div> @endif
             </div>
 
             <div class="form-group">
                 <label for="pseudo">Pseudo<span id="important">*</span></label>
-                <input type="text" name="pseudo" id="login" class="form-control" placeholder="ex : ConnectanouGérant974"
-                       required/>
-
+                <input type="text" name="pseudo" id="login" class="form-control" placeholder="ex : ConnectanouGérant974" value="{{old('pseudo')}}"
+                       />
+                @if ($errors->has('pseudo')) <div class="alert alert-danger">{{ $errors->first('pseudo') }}</div> @endif
             </div>
             <!-- Password -->
             <div class="form-group">
                 <label for="passe">Mot de Passe<span id="important">*</span></label>
                 <input type="password" name="password" id="mdp" class="form-control" placeholder="***************"
-                       required/>
+                       />
+                 @if ($errors->has('password')) <div class="alert alert-danger">{{ $errors->first('password') }} {{-- @if($errors->has('password')) et le Mot de Passe doit contenir au moins une lettre majuscule, une lettre minuscule, un chiffre et un symbole. @endif --}}</div> @endif
 
             </div>
             <div class="form-group">
                 <label for="password2">Confirmez votre Mot de Passe<span id="important">*</span></label>
                 <input type="password" name="password2" id="mdp2" class="form-control" placeholder="***************"
-                       required/>
-
+                       />
+                 @if ($errors->has('password2')) <div class="alert alert-danger">{{ $errors->first('password2') }}</div> @endif
             </div>
             <div class="custom-control custom-checkbox form-group">
                 <input type="checkbox" class="custom-control-input" id="customCheck1" name="mentionsLegales"/>
@@ -112,6 +116,7 @@
                     informations saisies soient utilisées<br/> uniquement dans le cadre <a href="#"
                                                                                            class="lien">légale</a> dans
                     l'association.
+                 @if ($errors->has('mentionsLegales')) <div class="alert alert-danger">{{ $errors->first('mentionsLegales') }}</div> @endif
             </div>
             <div class="g-recaptcha form-group" data-sitekey="6LeTmMAUAAAAADw7uH0DmeFBI9x0YeqhCZos-AFR"></div>
             <!-- <script src="https://www.google.com/recaptcha/api.js?render=6LdxmMAUAAAAAGaKb_PBUkAazJGtn_kBjNI1zViW"></script>

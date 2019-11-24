@@ -45,11 +45,13 @@ class PorteurController extends Controller
     {
         //Ajout des règles de validations
         $this->validate($request, [
-            'password' => 'required|min:12',
+            'password' => 'required|min:12|regex:#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)#',
+            'password2' => 'required|min:12|regex:#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)#',
             'mail' => 'required|email',
             'nom' => 'required',
             'prenom' => 'required',
             'pseudo' => 'required',
+            'tel' => 'required',
             'Poste' => 'required',
             'mentionsLegales' => 'required'
         ]);
@@ -83,10 +85,10 @@ class PorteurController extends Controller
                     DB::table('organisations')->where('Id', (int) $Orga)->update(['IdPorteur' => $id]);
                     return redirect()->route('connect')->with('sucess', 'Porteur ajouté');
                 } else {
-                    return redirect()->route('PortProjetSub')->withErrors('Les Mots de Passes ne correspondent pas');
+                    return redirect()->route('PortProjetSub')->withErrors('Les Mots de Passes ne correspondent pas', 'Diffmdp');
                 }
             } else {
-                return redirect()->route('PortProjetSub')->withErrors('Ce pseudo est déjà utilisé par l\'un de nos clients');
+                return redirect()->route('PortProjetSub')->withErrors('Ce pseudo est déjà utilisé par l\'un de nos clients', 'MailUsed');
             }
         } else {
             return redirect()->route('PortProjetSub')->withErrors('Cette Adresse E-mail est déjà utilisé par l\'un de nos clients');
