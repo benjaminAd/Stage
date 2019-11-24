@@ -43,40 +43,53 @@ class PorteurController extends Controller
      */
     public function store(Request $request)
     {
-        $password = $request->get('password');
-        $confPassword = $request->get('password2');
-        if ($password == $confPassword) {
-            //Vérification si le client a choisi une entreprise, une association ou s'il est un particulier
-            if ($request->get('NomEntreprise') != "") {
-                $Orga = (int)$request->get('NomEntreprise'); //
-            } else if ($request->get('NomAssociation') != "") {
-                $Orga = (int)$request->get('NomAssociation');
-            } else if ($request->get('typeOrganisation') == "particulier") {
-                $Orga = null; //Si c'est un particulier alors il n'appartient à aucune Organisation
+        //Ajout des règles de validations
+        $this->validate($request, [
+            'password' => 'required|min:12',
+            'mail' => 'required|email',
+            'nom' => 'required',
+            'prenom' => 'required',
+            'pseudo' => 'required',
+            'Poste' => 'required',
+            'mentionsLegales' => 'required'
+        ]);
+        $password = $request->get('Mot de Passe');
+        $confPassword = $request->get('Mot de Passe 2');
+        if (((DB::table('porteurs')->where('Email', $request->get("mail"))->count()) == 0)) {
+            if ((DB::table('porteurs')->where('Login', $request->get('pseudo'))->count()) == 0) {
+                if ($password == $confPassword) {
+                    //Vérification si le client a choisi une entreprise, une association ou s'il est un particulier
+                    if ($request->get('NomEntreprise') != "") {
+                        $Orga = (int) $request->get('NomEntreprise'); //
+                    } else if ($request->get('NomAssociation') != "") {
+                        $Orga = (int) $request->get('NomAssociation');
+                    } else if ($request->get('typeOrganisation') == "particulier") {
+                        $Orga = null; //Si c'est un particulier alors il n'appartient à aucune Organisation
+                    } else {
+                        return redirect()->route('PortProjetSub')->withErrors('Vous devez entrez une Entreprise ou une Association ou un poste en tant que Particulier');
+                    }
+                    $porteur = new Porteur([
+                        'IdOrga' => $Orga,
+                        'Nom' => $request->get('nom'),
+                        'Prenom' => $request->get('prenom'),
+                        'Email' => $request->get('mail'),
+                        'Login' => $request->get('pseudo'),
+                        'Mdp' => Hash::make($password),
+                        'Telephone' => $request->get('tel'),
+                        'Poste' => $request->get('Poste')
+                    ]);
+                    $porteur->save();
+                    $id = DB::table('porteurs')->where('Login', $request->get('pseudo'))->value('Id');
+                    DB::table('organisations')->where('Id', (int) $Orga)->update(['IdPorteur' => $id]);
+                    return redirect()->route('connect')->with('sucess', 'Porteur ajouté');
+                } else {
+                    return redirect()->route('PortProjetSub')->withErrors('Les Mots de Passes ne correspondent pas');
+                }
+            } else {
+                return redirect()->route('PortProjetSub')->withErrors('Ce pseudo est déjà utilisé par l\'un de nos clients');
             }
-            $this->validate($request, [
-                'password' => 'required|alphaNum|min:12',
-                'mail' => 'required|email',
-                'nom' => 'required',
-                'Poste' => 'required',
-                'mentionsLegales' => 'required'
-            ]);
-            $porteur = new Porteur([
-                'IdOrga' => $Orga,
-                'Nom' => $request->get('nom'),
-                'Prenom' => $request->get('prenom'),
-                'Email' => $request->get('mail'),
-                'Login' => $request->get('pseudo'),
-                'Mdp' => Hash::make($password),
-                'Telephone' => $request->get('tel'),
-                'Poste' => $request->get('Poste')
-            ]);
-            $porteur->save();
-            $id = DB::table('porteurs')->where('Login', $request->get('pseudo'))->value('Id');
-            DB::table('organisations')->where('Id', (int)$Orga)->update(['IdPorteur' => $id]);
-            return redirect()->route('connect')->with('sucess', 'Porteur ajouté');
         } else {
-            return redirect()->route('PortProjetSub')->with('fail', 'Mots de passe différents');
+            return redirect()->route('PortProjetSub')->withErrors('Cette Adresse E-mail est déjà utilisé par l\'un de nos clients');
         }
     }
 
