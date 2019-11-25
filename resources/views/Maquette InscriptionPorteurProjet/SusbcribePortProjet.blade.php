@@ -13,7 +13,7 @@
             <p class="h4 mb-4 text-center">S'inscrire en tant que Porteur de Projet</p>
             @if ($errors->has('Diffmdp')) <div class="alert alert-danger">{{ $errors->first('Diffmdp') }}</div> @endif
             @if ($errors->has('MailUsed')) <div class="alert alert-danger">{{ $errors->first('MailUsed') }}</div> @endif
-            @if ($errors->any())
+            {{-- @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
                         @foreach ($errors->all() as $error)
@@ -21,7 +21,7 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif
+            @endif --}}
             <div class="row">
                 <div class="form-group col">
                     <label for="nom">Nom<span id="important">*</span></label>
@@ -70,6 +70,9 @@
                     <input type="text" class="form-control col" id="nomorganisation" placeholder="ex : Connectanou"
                            disabled/>
                 </div>
+                @if($errors->has('ErreurOrganisation'))
+                <div class="alert alert-danger">{{$errors->first('ErreurOrganisation')}}</div>
+                @endif
             </div>
             <div class="form-group" id="post">
                 <label for="Poste">Poste<span class="importSelect" id="important">*</span></label>

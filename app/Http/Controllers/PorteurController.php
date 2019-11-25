@@ -45,8 +45,8 @@ class PorteurController extends Controller
     {
         //Ajout des règles de validations
         $this->validate($request, [
-            'password' => 'required|min:12|regex:#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)#',
-            'password2' => 'required|min:12|regex:#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)#',
+            'password' => 'required|min:8|regex:#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)#',
+            'password2' => 'required|min:8|regex:#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)#',
             'mail' => 'required|email',
             'nom' => 'required',
             'prenom' => 'required',
@@ -67,8 +67,8 @@ class PorteurController extends Controller
                         $Orga = (int) $request->get('NomAssociation');
                     } else if ($request->get('typeOrganisation') == "particulier") {
                         $Orga = null; //Si c'est un particulier alors il n'appartient à aucune Organisation
-                    } else {
-                        return redirect()->route('PortProjetSub')->withErrors('Vous devez entrez une Entreprise ou une Association ou un poste en tant que Particulier');
+                    } else if ($request->get('typeOrganisation') == 'organisation') {
+                        return redirect()->route('PortProjetSub')->withErrors('Vous devez entrez une Entreprise ou une Association ou un poste en tant que Particulier', 'ErreurOrganisation');
                     }
                     $porteur = new Porteur([
                         'IdOrga' => $Orga,
@@ -88,10 +88,10 @@ class PorteurController extends Controller
                     return redirect()->route('PortProjetSub')->withErrors('Les Mots de Passes ne correspondent pas', 'Diffmdp');
                 }
             } else {
-                return redirect()->route('PortProjetSub')->withErrors('Ce pseudo est déjà utilisé par l\'un de nos clients', 'MailUsed');
+                return redirect()->route('PortProjetSub')->withErrors('Ce pseudo est déjà utilisé par l\'un de nos clients', 'LoginUsed');
             }
         } else {
-            return redirect()->route('PortProjetSub')->withErrors('Cette Adresse E-mail est déjà utilisé par l\'un de nos clients');
+            return redirect()->route('PortProjetSub')->withErrors('Cette Adresse E-mail est déjà utilisé par l\'un de nos clients', 'MailUsed');
         }
     }
 
