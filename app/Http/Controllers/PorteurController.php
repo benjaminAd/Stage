@@ -45,8 +45,8 @@ class PorteurController extends Controller
     {
         //Ajout des règles de validations
         $this->validate($request, [
-            'password' => 'required|min:8|regex:#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)#',
-            'password2' => 'required|min:8|regex:#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)#',
+            'password' => 'required|min:6 |regex:#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)# ',
+            'password2' => 'required|min:6|regex:#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)#',
             'mail' => 'required|email',
             'nom' => 'required',
             'prenom' => 'required',
@@ -55,8 +55,8 @@ class PorteurController extends Controller
             'Poste' => 'required',
             'mentionsLegales' => 'required'
         ]);
-        $password = $request->get('Mot de Passe');
-        $confPassword = $request->get('Mot de Passe 2');
+        $password = $request->get('password');
+        $confPassword = $request->get('password2');
         if (((DB::table('porteurs')->where('Email', $request->get("mail"))->count()) == 0)) {
             if ((DB::table('porteurs')->where('Login', $request->get('pseudo'))->count()) == 0) {
                 if ($password == $confPassword) {
@@ -67,7 +67,7 @@ class PorteurController extends Controller
                         $Orga = (int) $request->get('NomAssociation');
                     } else if ($request->get('typeOrganisation') == "particulier") {
                         $Orga = null; //Si c'est un particulier alors il n'appartient à aucune Organisation
-                    } else if ($request->get('typeOrganisation') == 'organisation') {
+                    } else {
                         return redirect()->route('PortProjetSub')->withErrors('Vous devez entrez une Entreprise ou une Association ou un poste en tant que Particulier', 'ErreurOrganisation');
                     }
                     $porteur = new Porteur([

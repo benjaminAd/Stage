@@ -101,11 +101,9 @@
             </div>
             <!-- Password -->
             <div class="form-group">
-                <label for="passe">Mot de Passe<span id="important">*</span></label>
-                <input type="password" name="password" id="mdp" class="form-control" placeholder="***************"
-                       />
-                 @if ($errors->has('password')) <div class="alert alert-danger">{{ $errors->first('password') }} {{-- @if($errors->has('password')) et le Mot de Passe doit contenir au moins une lettre majuscule, une lettre minuscule, un chiffre et un symbole. @endif --}}</div> @endif
-
+                <label for="password">Mot de Passe<span id="important">*</span></label>
+                <input type="password" name="password" id="mdp" class="form-control" placeholder="***************"/>
+                 @if ($errors->has('password')) <div class="alert alert-danger">{{ $errors->first('password') }}</div> @endif
             </div>
             <div class="form-group">
                 <label for="password2">Confirmez votre Mot de Passe<span id="important">*</span></label>
