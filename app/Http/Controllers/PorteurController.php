@@ -53,7 +53,8 @@ class PorteurController extends Controller
             'pseudo' => 'required',
             'tel' => 'required',
             'Poste' => 'required',
-            'mentionsLegales' => 'required'
+            'mentionsLegales' => 'required',
+
         ]);
         $password = $request->get('password');
         $confPassword = $request->get('password2');

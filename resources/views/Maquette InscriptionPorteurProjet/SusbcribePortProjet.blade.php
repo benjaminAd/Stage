@@ -104,7 +104,7 @@
                 <label for="password">Mot de Passe<span id="important">*</span></label>
                 <input type="password" name="password" id="mdp" class="form-control" placeholder="***************"/>
                  @if ($errors->has('password')) <div class="alert alert-danger">{{ $errors->first('password') }}</div> @endif
-            </div>
+            
             <div class="form-group">
                 <label for="password2">Confirmez votre Mot de Passe<span id="important">*</span></label>
                 <input type="password" name="password2" id="mdp2" class="form-control" placeholder="***************"
