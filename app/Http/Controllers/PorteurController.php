@@ -85,7 +85,7 @@ class PorteurController extends Controller
             return redirect()->route('PortProjetSub')->withErrors(['ErreurOrganisation' => 'Vous devez entrez une Entreprise ou une Association ou un poste en tant que Particulier']);
         }
         $client = new Client();
-        $reponse = $client->post('https://www.google.com/recaptcha/api/siteverify', [
+        $reponse = $client->request('POST', 'https://www.google.com/recaptcha/api/siteverify', [
             'form_params' => array(
                 'secret' => getenv('CAPTCHA_SECRET'),
                 'response' => $token
