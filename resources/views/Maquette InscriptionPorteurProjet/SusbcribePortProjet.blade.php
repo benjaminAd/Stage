@@ -119,21 +119,27 @@
                     l'association.
                  @if ($errors->has('mentionsLegales')) <div class="alert alert-danger">{{ $errors->first('mentionsLegales') }}</div> @endif
             </div>
-            <div class="g-recaptcha form-group" data-sitekey="6LeTmMAUAAAAADw7uH0DmeFBI9x0YeqhCZos-AFR"></div>
-            <!-- <script src="https://www.google.com/recaptcha/api.js?render=6LdxmMAUAAAAAGaKb_PBUkAazJGtn_kBjNI1zViW"></script>
+            <div class="form-group">
+            <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY')}}"></div>
+            @if ($errors->has('g-recaptcha-response'))
+                 <div class="alert alert-danger">{{ $errors->first('g-recaptcha-response') }}</div>
+            @endif
+            </div>
+            {{-- <!-- <script src="https://www.google.com/recaptcha/api.js?render=6LdxmMAUAAAAAGaKb_PBUkAazJGtn_kBjNI1zViW"></script>
               <script>
               grecaptcha.ready(function() {
                   grecaptcha.execute('_reCAPTCHA_site_key_', {action: 'homepage'}).then(function(token) {
 
                   });
               });
-        </script> -->
+        </script> --> --}}
             <!-- Sign in button -->
             <button class="btn btn-info btn-block my-4 " type="submit" id="bouton">
                 S'inscrire
             </button>
         </form>
     </div>
+</div>
     <footer class="py-3 bg-dark align-items-center mt-5">
         <div class="container text-center">
             <div class="icone">
