@@ -23,10 +23,15 @@ class CreateRealisateurProjetsTable extends Migration
             $table->double('Telephone');
             $table->date('DateNaissance');
             $table->string('CVURL');
+            $table->integer('IdOrga')->nullable();
             $table->string('LinkedinURL');
             $table->string('PhotoDeProfilURL');
             $table->integer('NbProjets');
             $table->integer('NbPoints');
+            $table->integer('IdNiveauEtudes');
+            $table->integer('IdStatut');
+            $table->foreign('IdOrga')->references('Id')->on('organisations');
+            $table->foreign('IdNiveauEtudes')->references('Id')->on('niveau_etudes');
             $table->timestamps();
         });
     }
