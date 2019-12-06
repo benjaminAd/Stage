@@ -84,14 +84,18 @@ class PorteurController extends Controller
 
             return redirect()->route('PortProjetSub')->withErrors(['ErreurOrganisation' => 'Vous devez entrez une Entreprise ou une Association ou un poste en tant que Particulier']);
         }
-        $client = new Client();
-        $reponse = $client->request('POST', 'https://www.google.com/recaptcha/api/siteverify', [
-            'form_params' => array(
-                'secret' => getenv('CAPTCHA_SECRET'),
+        $client = new Client([
+            'base_uri' => 'https://www.google.com/recaptcha/api/',
+            'timeout' => 5.0
+        ]);
+        $reponse = $client->request('POST', 'siteverify', [
+            'query' => [
+                'secret' => env('CAPTCHA_SECRET'),
                 'response' => $token
-            )
+            ]
         ]);
         $resultat = json_decode($reponse->getBody()->getContents());
+        // dd($resultat);
         if (!$resultat->success) {
             return redirect()->route('PortProjetSub')->withErrors(['g-recaptcha-response' => 'Une erreur est survenue veuillez compléter le Captcha']);
         }
