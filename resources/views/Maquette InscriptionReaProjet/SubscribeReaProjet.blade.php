@@ -9,7 +9,7 @@
      <div class="d-flex justify-content-center align-items-center divCon mt-5">
     <form class="border border-light p-5 divConnect needs-validation" action="#" novalidate>
       <img class="img-fluid rounded-circle mx-auto d-block" src="./img/fav_png150vct.png" alt="Logo" />
-      <p class="h4 mb-4 text-center">S'inscrire en tant que Réalisateur de Projet</p>
+      <p class="h4 mb-4 text-center">Inscrivez-vous en tant que Réalisateur de Projet</p>
 
       <div class="row">
         <div class="form-group col">

@@ -16,18 +16,17 @@ class CreateOrganisationsTable extends Migration
         Schema::create('organisations', function (Blueprint $table) {
             $table->increments('Id');
             $table->double('SIRET');
-            $table->unique('SIRET', 'unique_SIRET');
+            $table->unique('SIRET', 'unique_SIRET')->nullable();
             $table->integer('IdCP');
             $table->integer('IdTypeOrga');
-            $table->integer('IdPorteur');
+            $table->integer('IdPorteur')->nullable();
             $table->string('RaisonSociale');
-            $table->string('SigleOrg');
-            $table->text('LogoUrl');
-            $table->text('Activite');
-            $table->integer('Telephone');
-            $table->integer('NbSalaries');
-            $table->text('SiteUrl');
-            $table->text('Adresse');
+            $table->text('LogoUrl')->nullable();
+            $table->text('Activite')->nullable();
+            $table->integer('Telephone')->nullable();
+            $table->integer('NbSalaries')->nullable();
+            $table->text('SiteUrl')->nullable();
+            $table->text('Adresse')->nullable();
             $table->foreign('IdCP')->references('Id')->on('codePostal');
             $table->foreign('IdTypeOrga')->references('Id')->on('typeOrganisation');
             $table->foreign('IdPorteur')->references('Id')->on('porteurs');
