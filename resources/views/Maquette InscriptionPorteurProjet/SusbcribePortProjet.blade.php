@@ -10,7 +10,7 @@
         <form class="border border-light p-5 divConnect" action="{{url('Porteur')}}" method="post">
             {{csrf_field()}}
             <img class="img-fluid rounded-circle mx-auto d-block" src="./img/fav_png150vct.png" alt="Logo"/>
-            <p class="h4 mb-4 text-center">S'inscrire en tant que Porteur de Projet</p>
+            <p class="h4 mb-4 text-center">Inscrivez-vous en tant que Porteur de Projet</p>
             @if ($errors->has('Diffmdp')) <div class="alert alert-danger">{{ $errors->first('Diffmdp') }}</div> @endif
             @if ($errors->has('MailUsed')) <div class="alert alert-danger">{{ $errors->first('MailUsed') }}</div> @endif
             {{-- @if ($errors->any())

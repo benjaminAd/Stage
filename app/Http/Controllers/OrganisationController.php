@@ -41,7 +41,20 @@ class OrganisationController extends Controller
      */
     public function store(Request $request)
     {
-        $idCP = DB::table('code_postaux')->where('CodePostal', $request->get('CodePostal'))->value('Id');
+        //Vérification des différents champs de la requête
+        $this->validate($request,[
+            'siret' => 'required|digits:14|numeric',
+            'RaisonSociale'=>'required',
+            'telephone'=>'required|numeric',
+            'site'=>'required',
+            'adresse'=>'required',
+            'CodePostal'=>'required|numeric',
+            'Ville'=>'required',
+            'activite'=>'required',
+            'checkbox'=>'required'
+        ]);
+        $idCP = DB::table('code_postaux')->where('CodePostal', $request->get('CodePostal'))->value('Id'); //Récupère l'id du Code Postal correspondant à celui entrer dans le champs
+        //Crée la variable organisation pour ensuite la sauvegarde dans la bdd avec -> save()
         $organisation = new Organisations([
             'SIRET' => $request->get('siret'),
             'IdCP' => $idCP,
@@ -58,6 +71,7 @@ class OrganisationController extends Controller
         ]);
         $organisation->save();
         $id = DB::table('organisations')->where('SIRET', $request->get('siret'))->value('Id');
+        //L'id n'étant attribué que lors de la sauvegarde dans la bdd, on met à jour la base avec le path de l'image qui a été uploader par le client et en donnant comme nom l'id qui vient d'être attribué
         DB::table('organisations')->where('Id', $id)->update(['LogoURL' => $this->uploadImg($request, $id)]);
         return redirect()->route('PortProjetSub')->with('success', 'Organisation ajoutée');
     }
@@ -70,7 +84,7 @@ class OrganisationController extends Controller
          * image
          * Extension : jpg,jpeg,png
          * Taille maximale de 2048 octets
-         * @return Path du fichier uploader
+         * @return Path du fichier uploader 
          */
         $this->validate($request, [
             'select_file' => 'required|image|mimes:jpg,jpeg,png|max:2048'
