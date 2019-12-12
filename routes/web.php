@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Accueil');
 });
 
 Route::get('login', function () {
@@ -20,7 +20,7 @@ Route::get('login', function () {
 })->name('connect');
 Route::get('ourTeam', function () {
     return view('Maquette Notre_equipe.section_equipe');
-});
+})->name('equipe');
 Route::get('SubscribePortProjet', 'PorteurController@index')->name('PortProjetSub');
 Route::get('SubscribeOrga', 'OrganisationController@index')->name('SubscribeOrga');
 Route::get('SubscribeReaProjet', function () {

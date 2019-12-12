@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./css/style_mdpForgot.css">
 @endsection
 @section('body')
+@include('navbar')
     <!-- Default form login -->
     <div class="d-flex justify-content-center align-items-center divCon mt-4">
         <form class="text-center border border-light p-5 divConnect" action="#!">
@@ -28,20 +29,7 @@
             <button class="btn btn-info btn-block my-4 " type="submit" id="bouton">Récupérer</button>
         </form>
     </div>
-    <footer class="py-3 bg-dark align-items-center mt-5">
-        <div class="container text-center">
-            <div class="icone">
-                <a href="https://www.linkedin.com/company/connectanou/"><img src="img/027-linkedin.png" width="23px"
-                                                                             height="23px"></a>
-                <a href="https://www.facebook.com/connectanou/"><img src="img/036-facebook.png" width="23px"
-                                                                     height="23px"></a>
-
-            </div>
-            <div class="mentionLegal">
-                <a href="contact.php">Contact</a>
-                <a href="mentionLegal.php">Mentions légales</a></div>
-        </div>
-    </footer>
+    @include('footer')
 @endsection
 @section('script')
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>

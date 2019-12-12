@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./css/style_ReaProjet.css" />
 @endsection
 @section('body')
+@include('navbar')
      <div class="d-flex justify-content-center align-items-center divCon mt-5">
     <form class="border border-light p-5 divConnect needs-validation" action="#" novalidate>
       <img class="img-fluid rounded-circle mx-auto d-block" src="./img/fav_png150vct.png" alt="Logo" />
@@ -163,19 +164,7 @@
       </button>
     </form>
   </div>
-  <footer class="py-3 bg-dark align-items-center mt-5">
-    <div class="container text-center">
-      <div class="icone">
-        <a href="https://www.linkedin.com/company/connectanou/"><img src="img/027-linkedin.png" width="23px" height="23px" /></a>
-
-        <a href="https://www.facebook.com/connectanou/"><img src="img/036-facebook.png" width="23px" height="23px" /></a>
-      </div>
-      <div class="mentionLegal">
-        <a href="contact.php">Contact</a>
-        <a href="mentionLegal.php">Mentions légales</a>
-      </div>
-    </div>
-  </footer>
+  @include('footer')
 @endsection
 @section('script')
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>

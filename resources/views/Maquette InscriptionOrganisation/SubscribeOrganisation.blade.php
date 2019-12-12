@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 @endsection
 @section('body')
+@include('navbar')
+<br/><br/><br/><br/>
     <!-- Default form login -->
     <div class="d-flex justify-content-center align-items-center divCon mt-5">
         <form class="border border-light p-5 divConnect needs-validation" enctype="multipart/form-data" method="post"
@@ -116,21 +118,7 @@ en informatique à gérer différents projets comme la création d'un site inter
             </button>
         </form>
     </div>
-    <footer class="py-3 bg-dark align-items-center mt-5">
-        <div class="container text-center">
-            <div class="icone">
-                <a href="https://www.linkedin.com/company/connectanou/"><img src="img/027-linkedin.png" width="23px"
-                                                                             height="23px"/></a>
-
-                <a href="https://www.facebook.com/connectanou/"><img src="img/036-facebook.png" width="23px"
-                                                                     height="23px"/></a>
-            </div>
-            <div class="mentionLegal">
-                <a href="contact.php">Contact</a>
-                <a href="mentionLegal.php">Mentions légales</a>
-            </div>
-        </div>
-    </footer>
+    @include('footer')
 @endsection
 @section('script')
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
