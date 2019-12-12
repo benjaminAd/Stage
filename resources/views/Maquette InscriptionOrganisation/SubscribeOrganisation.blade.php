@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 @endsection
 @section('body')
+@include('navbar')
+<br/><br/><br/><br/>
     <!-- Default form login -->
     <div class="d-flex justify-content-center align-items-center divCon mt-5">
         <form class="border border-light p-5 divConnect needs-validation" enctype="multipart/form-data" method="post"
@@ -16,12 +18,12 @@
             <img class="img-fluid rounded-circle mx-auto d-block" src="./img/fav_png150vct.png" alt="Logo"/>
             <p class="h4 mb-4 text-center">Inscrivez votre Organisation</p>
             <div class="form-group">
-                <label>SIRET :</label>
+                <label>SIRET</label>
                 <input type="number" name="siret" class="form-control" id="siret" placeholder="ex : 36252187900034" data-toggle="tooltip" data-placement="right" title="Évitez les espaces dans le Siret"/>
                  @if ($errors->has('siret')) <div class="alert alert-danger">{{ $errors->first('siret') }}</div> @endif
             </div>
             <div class="form-group">
-                <label>Raison sociale</label>
+                <label>Raison sociale<span id="important">*</span></label>
                 <div class="form-group">
                 <div class="form-inline" id="Organisation">
                     <select name="typeOrganisation" class="custom-select col-3" id="typeOrganisation">
@@ -41,7 +43,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label>Téléphone</label>
+                <label>Téléphone<span id="important">*</span></label>
             <input type="tel" name="telephone" id="telephone" class="form-control" placeholder="ex : 0262xxxxxx" value="{{old('telephone')}}"
                        />
              @if ($errors->has('telephone')) <div class="alert alert-danger">{{ $errors->first('telephone') }}</div> @endif
@@ -53,7 +55,7 @@
             @if ($errors->has('site')) <div class="alert alert-danger">{{ $errors->first('site') }}</div> @endif
             </div>
             <div class="form-group">
-                <label>Adresse de l'Organisation</label>
+                <label>Adresse de l'Organisation<span id="important">*</span></label>
                 <input type="text" name="adresse" id="adresse" class="form-control"
             placeholder="ex : 70 Avenue Georges Brassens" value="{{old('adresse')}}"
                        />
@@ -72,14 +74,14 @@
             </div> --}}
              <div class="row" id="Organisation">
                 <div class="form-group col">
-                    <label>Code Postal</label>
+                    <label>Code Postal<span id="important">*</span></label>
                     <div class="ui-widget">
                         <input type="number" id="IdCP" name="CodePostal"class="form-control col" placeholder="ex : 97490" value="{{old('CodePostal')}}" />
                     </div>
                     @if ($errors->has('CodePostal')) <div class="alert alert-danger">{{ $errors->first('CodePostal') }}</div> @endif
                 </div>
                 <div class="form-group col">
-                    <label class="text-left">Ville</label>
+                    <label class="text-left">Ville<span id="important">*</span></label>
                     <input type="text" id="IdVille" name="Ville" class="form-control col" placeholder="ex : Sainte-Clotilde" value="{{old('IdVille')}}"
                            />
                     @if ($errors->has('Ville')) <div class="alert alert-danger">{{ $errors->first('Ville') }}</div> @endif
@@ -91,14 +93,14 @@
                  @if ($errors->has('salariés')) <div class="alert alert-danger">{{ $errors->first('salariés') }}</div> @endif
             </div>
             <div class="form-group">
-                <label>Activité de l'Organisation</label>
+                <label>Activité de l'Organisation<span id="important">*</span></label>
                 <textarea class="form-control" name="activite" id="activite" rows="3" placeholder="Ex : Association qui permet à de jeunes étudiants
 en informatique à gérer différents projets comme la création d'un site internet ou la création d'une application mobile pour des Petites et Moyennes Entreprises. "
                           ></textarea>
                 @if ($errors->has('activite')) <div class="alert alert-danger">{{ $errors->first('activite') }}</div> @endif
             </div>
             <div class="form-group files">
-                <label>Importez votre Logo<span id="important">*</span></label>
+                <label>Importez votre Logo</label>
                 <input type="file" name="select_file" class="form-control" >
                  @if ($errors->has('select_file')) <div class="alert alert-danger">{{ $errors->first('select_file') }}</div> @endif
             </div>
@@ -116,21 +118,7 @@ en informatique à gérer différents projets comme la création d'un site inter
             </button>
         </form>
     </div>
-    <footer class="py-3 bg-dark align-items-center mt-5">
-        <div class="container text-center">
-            <div class="icone">
-                <a href="https://www.linkedin.com/company/connectanou/"><img src="img/027-linkedin.png" width="23px"
-                                                                             height="23px"/></a>
-
-                <a href="https://www.facebook.com/connectanou/"><img src="img/036-facebook.png" width="23px"
-                                                                     height="23px"/></a>
-            </div>
-            <div class="mentionLegal">
-                <a href="contact.php">Contact</a>
-                <a href="mentionLegal.php">Mentions légales</a>
-            </div>
-        </div>
-    </footer>
+    @include('footer')
 @endsection
 @section('script')
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>

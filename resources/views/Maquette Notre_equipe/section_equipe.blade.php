@@ -9,6 +9,7 @@
         <link href="css/style_ourTeam.css" rel="stylesheet"/>
     @endsection
     @section('body')
+    @include('navbar')
         {{-- <nav class="navbar navbar-expand-lg fixed-top navbar-transparent "color-on-scroll="300">
         <div class="container">
           <div class="navbar-translate">
@@ -624,14 +625,12 @@
             </div>
         </div>
     </section>
+    @include('footer')
     @endsection
     @section('script')
     <script src="js/profil.js" type="text/javascript"></script>
-    <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-    <script src="js/plugins/bootstrap-switch.js"></script>
     <!--  Plugin for the DatePicker, full documentation here: https://github.com/uxsolutions/bootstrap-datepicker -->
     <script src="js/plugins/moment.min.js"></script>
-    <script src="js/plugins/bootstrap-datepicker.js" type="text/javascript"></script>
     <!--  Google Maps Plugin    -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
     @endsection
