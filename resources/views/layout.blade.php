@@ -21,8 +21,8 @@
 <script src="js/plugins/nouislider.min.js" type="text/javascript"></script>
 <!-- Control Center for Paper Kit: parallax effects, scripts for the example pages etc -->
 <script src="js/paper-kit.js?v=2.2.0" type="text/javascript"></script>
-<!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
-<script src="js/plugins/bootstrap-switch.js"></script>
+    <!--  Plugin for Switches, full documentation here: http://www.jque.re/plugins/version3/bootstrap.switch/ -->
+    <script src="js/plugins/bootstrap-switch.js"></script>
 <script src="js/plugins/bootstrap-datepicker.js" type="text/javascript"></script>
 @yield('script')
 </body>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Organisations;
 use Illuminate\Support\Facades\DB;
+use GuzzleHttp\Client;
 
 class OrganisationController extends Controller
 {
@@ -41,18 +42,40 @@ class OrganisationController extends Controller
      */
     public function store(Request $request)
     {
+        //Récupération token et vérification de son existence
+        $token = $request->get('g-recaptcha-response');
+        if ($token == null) { // Lorsque que le captcha n'est pas coché $token récupère la valeur null
+            // dd($token);
+            return redirect()->route('PortProjetSub')->withErrors(['g-recaptcha-response' => 'veuillez cocher le Captcha']);
+        }
         //Vérification des différents champs de la requête
-        $this->validate($request,[
+        $this->validate($request, [
             'siret' => 'required|digits:14|numeric',
-            'RaisonSociale'=>'required',
-            'telephone'=>'required|numeric',
-            'site'=>'required',
-            'adresse'=>'required',
-            'CodePostal'=>'required|numeric',
-            'Ville'=>'required',
-            'activite'=>'required',
-            'checkbox'=>'required'
+            'RaisonSociale' => 'required',
+            'telephone' => 'required|numeric',
+            'site' => 'required',
+            'adresse' => 'required',
+            'CodePostal' => 'required|numeric',
+            'Ville' => 'required',
+            'activite' => 'required',
+            'checkbox' => 'required'
         ]);
+        //Création du client et de la vérification du captcha par google
+        $client = new Client([
+            'base_uri' => 'https://www.google.com/recaptcha/api/',
+            'timeout' => 5.0
+        ]);
+        $reponse = $client->request('POST', 'siteverify', [
+            'query' => [
+                'secret' => env('CAPTCHA_SECRET'),
+                'response' => $token
+            ]
+        ]);
+        $resultat = json_decode($reponse->getBody()->getContents());
+        // dd($resultat);
+        if (!$resultat->success) {
+            return redirect()->route('PortProjetSub')->withErrors(['g-recaptcha-response' => 'Une erreur est survenue veuillez compléter le Captcha']);
+        }
         $idCP = DB::table('code_postaux')->where('CodePostal', $request->get('CodePostal'))->value('Id'); //Récupère l'id du Code Postal correspondant à celui entrer dans le champs
         //Crée la variable organisation pour ensuite la sauvegarde dans la bdd avec -> save()
         $organisation = new Organisations([
@@ -90,10 +113,10 @@ class OrganisationController extends Controller
             'select_file' => 'required|image|mimes:jpg,jpeg,png|max:2048'
         ]);
         $image = $request->file('select_file'); //Méthode fournie par Laravel afin de récupérer le fichier uploader
-        $new_name = $id . '.' . $image->getClientOriginalExtension();//La variable new_name va nous permettre de renommer l'image comme bon nous semble
+        $new_name = $id . '.' . $image->getClientOriginalExtension(); //La variable new_name va nous permettre de renommer l'image comme bon nous semble
         //dans ce cas, on renome l'image avec l'id de l'organistion et on reprend l'extension du fichier uploader par client
-        $image->move(public_path("img/Logo"), $new_name);//Méthode fournie par Laravel qui permet de donner le nouveau chemin pour le fichier uploader
-        return public_path("img\Logo\\") . $new_name;//
+        $image->move(public_path("img/Logo"), $new_name); //Méthode fournie par Laravel qui permet de donner le nouveau chemin pour le fichier uploader
+        return public_path("img\Logo\\") . $new_name; //
     }
 
     /**
