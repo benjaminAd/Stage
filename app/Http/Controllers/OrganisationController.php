@@ -46,7 +46,7 @@ class OrganisationController extends Controller
         $token = $request->get('g-recaptcha-response');
         if ($token == null) { // Lorsque que le captcha n'est pas coché $token récupère la valeur null
             // dd($token);
-            return redirect()->route('PortProjetSub')->withErrors(['g-recaptcha-response' => 'veuillez cocher le Captcha']);
+            return redirect()->route('SubscribeOrga')->withErrors(['g-recaptcha-response' => 'veuillez cocher le Captcha']);
         }
         //Vérification des différents champs de la requête
         $this->validate($request, [
@@ -74,7 +74,7 @@ class OrganisationController extends Controller
         $resultat = json_decode($reponse->getBody()->getContents());
         // dd($resultat);
         if (!$resultat->success) {
-            return redirect()->route('PortProjetSub')->withErrors(['g-recaptcha-response' => 'Une erreur est survenue veuillez compléter le Captcha']);
+            return redirect()->route('SubscribeOrga')->withErrors(['g-recaptcha-response' => 'Une erreur est survenue veuillez compléter le Captcha']);
         }
         $idCP = DB::table('code_postaux')->where('CodePostal', $request->get('CodePostal'))->value('Id'); //Récupère l'id du Code Postal correspondant à celui entrer dans le champs
         //Crée la variable organisation pour ensuite la sauvegarde dans la bdd avec -> save()
@@ -82,7 +82,7 @@ class OrganisationController extends Controller
             'SIRET' => $request->get('siret'),
             'IdCP' => $idCP,
             'IdTypeOrga' => $request->get('typeOrganisation'),
-            'IdPorteur' => 10000,
+            'IdPorteur' => null,
             'RaisonSociale' => $request->get('RaisonSociale'),
             'SigleOrg' => $request->get('sigle'),
             'LogoURL' => 'un url quelconque',

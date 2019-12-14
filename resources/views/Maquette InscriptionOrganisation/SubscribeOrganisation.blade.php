@@ -112,7 +112,12 @@ en informatique à gérer différents projets comme la création d'un site inter
                     l'association.
                  @if ($errors->has('checkbox')) <div class="alert alert-danger">{{ $errors->first('checkbox') }}</div> @endif
             </div>
-            <div class="g-recaptcha form-group" data-sitekey="6LeTmMAUAAAAADw7uH0DmeFBI9x0YeqhCZos-AFR"></div>
+          <div class="form-group">
+            <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY')}}"></div>
+            @if ($errors->has('g-recaptcha-response'))
+                 <div class="alert alert-danger">{{ $errors->first('g-recaptcha-response') }}</div>
+            @endif
+            </div>
             <button class="btn btn-info btn-block my-4 " type="submit" id="bouton">
                 Inscrire
             </button>
