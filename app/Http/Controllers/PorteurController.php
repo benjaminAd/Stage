@@ -44,6 +44,7 @@ class PorteurController extends Controller
      */
     public function store(Request $request)
     {
+        //Récupération token et vérification de son existence
         $token = $request->get('g-recaptcha-response');
         if ($token == null) { // Lorsque que le captcha n'est pas coché $token récupère la valeur null
             // dd($token);
