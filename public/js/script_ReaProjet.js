@@ -1,9 +1,11 @@
 $(function() {
+	$('#EcoleAjout').hide();
 	$("select[name='Ecole']").change(function() {
 		var val = $(this).val();
-		if (val == 'ajouter') {
-			console.log('ajouter');
-			window.location = 'SubscribeOrga';
+		if (val == 'autre') {
+			$('#EcoleAjout').show();
+		} else {
+			$('#EcoleAjout').hide();
 		}
 	});
 	$('#ecole').hide();

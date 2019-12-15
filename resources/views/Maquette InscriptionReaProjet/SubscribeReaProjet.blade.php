@@ -44,7 +44,7 @@
           <option value="">Formateur</option>
           <option value="">Demandeur d'emploi</option>
           <option value="">Salarié</option>
-          <option value="">Etrepreneur</option>
+          <option value="">Entrepreneur</option>
           <option value="ajouter">Ajouter</option>
         </select>
       </div>
@@ -55,8 +55,12 @@
           <option value="universitéDenis">Université de La Réunion</option>
           <option value="IUTPierre">IUT Saint-Pierre</option>
           <option value="IAE">IAE</option>
-          <option value="ajouter">Ajouter</option>
+          <option value="autre">Autre</option>
         </select>
+      </div>
+      <div class="form-group" id="EcoleAjout">
+        <label>Nom de votre Ecole</label>
+        <input type="text" class="form-control" name="EcoleNom" id="EcoleNom"/>
       </div>
       <div class="form-group">
         <label for="domaine">Domaine</label>
@@ -69,18 +73,11 @@
       </div>
       <div class="form-group">
         <label>Niveau d'études</label>
-        <select name="diplome" class="custom-select col" id="diplome">
+        <select name="NiveauEtude" class="custom-select col" id="Niveau">
           <option value="" selected>Niveaux</option>
-          <option value="<">
-            < BAC</option> <option value="1">BAC +1
-          </option>
-          <option value="2">BAC +2</option>
-          <option value="3">BAC +3</option>
-          <option value="4">BAC +4</option>
-          <option value="5">BAC +5</option>
-          <option value="6">BAC +6</option>
-          <option value="7">BAC +7</option>
-          <option value="8">BAC +8</option>
+          @foreach ($NiveauEtude as $niveau)
+            <option value="{{{$niveau->id}}}">{{{$niveau->NiveauEtude}}}</option>
+          @endforeach
         </select>
       </div>
       <!-- Email -->

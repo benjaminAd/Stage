@@ -84,7 +84,6 @@ class OrganisationController extends Controller
             'IdTypeOrga' => $request->get('typeOrganisation'),
             'IdPorteur' => null,
             'RaisonSociale' => $request->get('RaisonSociale'),
-            'SigleOrg' => $request->get('sigle'),
             'LogoURL' => 'un url quelconque',
             'Activite' => $request->get('activite'),
             'Telephone' => $request->get('telephone'),

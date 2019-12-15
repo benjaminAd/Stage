@@ -15,6 +15,7 @@ class CreateNiveauDiplomesTable extends Migration
     {
         Schema::create('niveau_diplomes', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('Niveau');
             $table->timestamps();
         });
     }

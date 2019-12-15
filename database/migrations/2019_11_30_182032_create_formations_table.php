@@ -15,6 +15,7 @@ class CreateFormationsTable extends Migration
     {
         Schema::create('formations', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('Formations');
             $table->timestamps();
         });
     }

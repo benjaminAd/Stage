@@ -15,6 +15,7 @@ class CreateStatutRealisateursTable extends Migration
     {
         Schema::create('statut_realisateurs', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('Statut');
             $table->timestamps();
         });
     }

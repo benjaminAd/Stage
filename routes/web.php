@@ -23,9 +23,7 @@ Route::get('ourTeam', function () {
 })->name('equipe');
 Route::get('SubscribePortProjet', 'PorteurController@index')->name('PortProjetSub');
 Route::get('SubscribeOrga', 'OrganisationController@index')->name('SubscribeOrga');
-Route::get('SubscribeReaProjet', function () {
-    return view('Maquette InscriptionReaProjet.SubscribeReaProjet');
-});
+Route::get('SubscribeReaProjet', 'ReaProjetController@index')->name('SubscribeRea');
 Route::get('Forgot', function () {
     return view('Maquette MdpForgot.mdpForgot');
 });
