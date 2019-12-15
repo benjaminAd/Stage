@@ -15,9 +15,9 @@ class CreateOrganisationsTable extends Migration
     {
         Schema::create('organisations', function (Blueprint $table) {
             $table->increments('Id');
-            $table->double('SIRET');
-            $table->unique('SIRET', 'unique_SIRET')->nullable();
-            $table->integer('IdCP');
+            $table->double('SIRET')->nullable();
+            $table->unique('SIRET', 'unique_SIRET');
+            $table->integer('IdCP')->nullable();
             $table->integer('IdTypeOrga');
             $table->integer('IdPorteur')->nullable();
             $table->string('RaisonSociale');

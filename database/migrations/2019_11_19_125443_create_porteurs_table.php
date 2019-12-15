@@ -20,10 +20,10 @@ class CreatePorteursTable extends Migration
             $table->string('Email');
             //$table->unique('Email', 'unique_email');
             $table->string('Login');
-           // $table->unique('Login', 'unique_Login');
+            // $table->unique('Login', 'unique_Login');
             $table->string('Mdp');
             $table->double('Telephone');
-            $table->string('Poste');
+            $table->string('Poste')->nullable();
             $table->integer('IdOrga')->nullable();
             $table->foreign('IdOrga')->references('Id')->on('organisations');
             $table->timestamps();
