@@ -11,7 +11,7 @@ $(function() {
 	$('#ecole').hide();
 	$("select[name='statut']").change(function() {
 		var val = $(this).val();
-		if (val == 'Etudiant') {
+		if (val == 1) {
 			$('#ecole').show();
 		} else {
 			$('#ecole').hide();

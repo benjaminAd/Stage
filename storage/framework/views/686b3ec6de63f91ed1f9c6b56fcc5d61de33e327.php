@@ -39,11 +39,9 @@
         <label>Statut</label>
         <select name="statut" class="custom-select" id="statut">
           <option value="" selected>Statut</option>
-          <option value="Etudiant">Etudiant</option>
-          <option value="">Formateur</option>
-          <option value="">Demandeur d'emploi</option>
-          <option value="">Salarié</option>
-          <option value="">Entrepreneur</option>
+          <?php $__currentLoopData = $Statuts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $Statut): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <option value="<?php echo e($Statut->id); ?>"><?php echo e($Statut->Statut); ?></option>
+          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
           <option value="ajouter">Ajouter</option>
         </select>
       </div>
@@ -51,9 +49,9 @@
         <label>École</label>
         <select name="Ecole" class="custom-select" id="Ecole">
           <option value="" selected>Ecoles</option>
-          <option value="universitéDenis">Université de La Réunion</option>
-          <option value="IUTPierre">IUT Saint-Pierre</option>
-          <option value="IAE">IAE</option>
+          <?php $__currentLoopData = $Ecoles; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $Ecole): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <option value="<?php echo e($Ecole->Id); ?>"><?php echo e($Ecole->RaisonSociale); ?></option>
+          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
           <option value="autre">Autre</option>
         </select>
       </div>
@@ -74,7 +72,7 @@
         <label>Niveau d'études</label>
         <select name="NiveauEtude" class="custom-select col" id="Niveau">
           <option value="" selected>Niveaux</option>
-          <?php $__currentLoopData = $NiveauEtude; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $niveau): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+          <?php $__currentLoopData = $NiveauxEtude; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $niveau): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <option value="<?php echo e($niveau->id); ?>"><?php echo e($niveau->NiveauEtude); ?></option>
           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </select>

@@ -17,5 +17,8 @@ class TypeOrganisationTable extends Seeder
         \Illuminate\Support\Facades\DB::table('type_organisations')->insert([
             'TypeOrganisation' => 'Association'
         ]);
+        \Illuminate\Support\Facades\DB::table('type_organisations')->insert([
+            'TypeOrganisation' => 'Ecole'
+        ]);
     }
 }

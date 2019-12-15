@@ -40,11 +40,9 @@
         <label>Statut</label>
         <select name="statut" class="custom-select" id="statut">
           <option value="" selected>Statut</option>
-          <option value="Etudiant">Etudiant</option>
-          <option value="">Formateur</option>
-          <option value="">Demandeur d'emploi</option>
-          <option value="">Salarié</option>
-          <option value="">Entrepreneur</option>
+          @foreach ($Statuts as $Statut)
+        <option value="{{{$Statut->id}}}">{{{$Statut->Statut}}}</option>
+          @endforeach
           <option value="ajouter">Ajouter</option>
         </select>
       </div>
@@ -52,9 +50,9 @@
         <label>École</label>
         <select name="Ecole" class="custom-select" id="Ecole">
           <option value="" selected>Ecoles</option>
-          <option value="universitéDenis">Université de La Réunion</option>
-          <option value="IUTPierre">IUT Saint-Pierre</option>
-          <option value="IAE">IAE</option>
+          @foreach ($Ecoles as $Ecole)
+            <option value="{{{$Ecole->Id}}}">{{{$Ecole->RaisonSociale}}}</option>
+          @endforeach
           <option value="autre">Autre</option>
         </select>
       </div>
@@ -75,7 +73,7 @@
         <label>Niveau d'études</label>
         <select name="NiveauEtude" class="custom-select col" id="Niveau">
           <option value="" selected>Niveaux</option>
-          @foreach ($NiveauEtude as $niveau)
+          @foreach ($NiveauxEtude as $niveau)
             <option value="{{{$niveau->id}}}">{{{$niveau->NiveauEtude}}}</option>
           @endforeach
         </select>
