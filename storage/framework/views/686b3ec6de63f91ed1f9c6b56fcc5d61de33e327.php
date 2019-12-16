@@ -63,9 +63,9 @@
         <label for="domaine">Domaine</label>
         <select name="Domains" id="Domaines" class="custom-select">
           <option value="" selected>Domaines</option>
-          <option value="">Informatique - Réseau - Télécom -</option>
-          <option value="">Économie - Droit juridique - Politique</option>
-          <option value="">Électricité - Électronique - Robotique - Mécanique</option>
+          <?php $__currentLoopData = $Domaines; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $Domaine): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <option value="<?php echo e($Domaine->Id); ?>"><?php echo e($Domaine->Domaines); ?></option>
+          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
         </select>
       </div>
       <div class="form-group">
