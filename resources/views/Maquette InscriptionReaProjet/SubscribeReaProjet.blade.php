@@ -64,9 +64,9 @@
         <label for="domaine">Domaine</label>
         <select name="Domains" id="Domaines" class="custom-select">
           <option value="" selected>Domaines</option>
-          <option value="">Informatique - Réseau - Télécom -</option>
-          <option value="">Économie - Droit juridique - Politique</option>
-          <option value="">Électricité - Électronique - Robotique - Mécanique</option>
+          @foreach ($Domaines as $Domaine)
+            <option value="{{{$Domaine->Id}}}">{{{$Domaine->Domaines}}}</option>
+          @endforeach
         </select>
       </div>
       <div class="form-group">
