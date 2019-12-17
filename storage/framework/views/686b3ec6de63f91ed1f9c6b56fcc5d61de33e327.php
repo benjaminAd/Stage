@@ -59,6 +59,10 @@
         <label>Nom de votre Ecole</label>
         <input type="text" class="form-control" name="EcoleNom" id="EcoleNom"/>
       </div>
+       <div class="form-group" id="Formations">
+        <label>Formation en cours</label>
+        <input type="text" class="form-control" placeholder="ex : Licence Informatique" name="Formation" id="Formation"/>
+      </div>
       <div class="form-group">
         <label for="domaine">Domaine</label>
         <select name="Domains" id="Domaines" class="custom-select">

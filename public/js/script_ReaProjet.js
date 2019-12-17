@@ -1,4 +1,5 @@
 $(function() {
+	$('#Formations').hide();
 	$('#EcoleAjout').hide();
 	$("select[name='Ecole']").change(function() {
 		var val = $(this).val();
@@ -13,8 +14,10 @@ $(function() {
 		var val = $(this).val();
 		if (val == 1) {
 			$('#ecole').show();
+			$('#Formations').show();
 		} else {
 			$('#ecole').hide();
+			$('#Formations').hide();
 		}
 	});
 });

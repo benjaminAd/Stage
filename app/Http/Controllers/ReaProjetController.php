@@ -44,7 +44,7 @@ class ReaProjetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Création d'un réalisateur de projet
     }
 
     /**

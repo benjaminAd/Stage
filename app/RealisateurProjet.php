@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class RealisateurProjet extends Model
 {
-    //
+    protected $fillable = ['Nom', 'Prenom', 'Email', 'Login', 'Mdp', 'Telephone', 'DateNaissance', 'CVURL', ''];
 }
