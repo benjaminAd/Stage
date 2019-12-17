@@ -21,7 +21,7 @@
                             <div class="frontside">
                                 <div class="card">
                                     <div class="card-body text-center">
-                                        <p><img class=" img-fluid" src="img/JENNA_AVATAR.png"></p>
+                                        <p><img src="img/Jenna_photo.jpg"></p>
                                         <h4 class="card-title">Jenna Pourchot</h4>
                                         <p class="card-text">Présidente de l'association</p>
 
@@ -69,29 +69,17 @@
                             <div class="backside">
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">Sunlimetech</h4>
+                                        <h4 class="card-title">Marie-Ange</h4>
                                         <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
                                                 <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                    <i class="fa fa-facebook"></i>
+                                                    <i class="fa fa-linkedin"></i>
                                                 </a>
                                             </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                    <i class="fa fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                    <i class="fa fa-skype"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                    <i class="fa fa-google"></i>
-                                                </a>
-                                            </li>
+                                            
+                                            
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -298,7 +286,7 @@
                             <div class="frontside">
                                 <div class="card">
                                     <div class="card-body text-center">
-                                        <p><img class=" img-fluid" src="favicon.ico" alt="card image"></p><h4 class="card-title">Yann</h4>
+                                        <p><img class=" img-fluid" src="img/Yann.jpg" alt="card image"></p><h4 class="card-title">Yann</h4>
                                         <p class="card-text">Web developpeur-Stagiaire</p>
 
                                     </div>
@@ -307,7 +295,7 @@
                             <div class="backside">
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">Sunlimetech</h4>
+                                        <h4 class="card-title">Yann</h4>
                                         <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
@@ -392,7 +380,7 @@
                             <div class="frontside">
                                 <div class="card">
                                     <div class="card-body text-center">
-                                        <p><img class=" img-fluid" src="favicon.ico" alt="card image"></p><h4 class="card-title">Benjamin Adolphe</h4>
+                                        <p><img class=" img-fluid" src="img/faces/Benjamin.jpg" alt="card image"></p><h4 class="card-title">Benjamin Adolphe</h4>
                                         <p class="card-text">Web developpeur-Stagiaire</p>
 
                                     </div>
@@ -401,29 +389,15 @@
                             <div class="backside">
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">Sunlimetech</h4>
-                                        <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
-                                        <ul class="list-inline">
+                                        <h4 class="card-title">Benjamin Adolphe</h4>
+                                        <p class="card-text">Etudiant en troisième année de licence informatique, Benjamin est interessé par tout ce qui concerne la programmation web, que ce soit en java ou en php il sait se débrouiller</p>
+            <ul class="list-inline">
                                             <li class="list-inline-item">
                                                 <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                    <i class="fa fa-facebook"></i>
+                                                    <i class="fa fa-linkedin"></i>
                                                 </a>
                                             </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                    <i class="fa fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                    <i class="fa fa-skype"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                    <i class="fa fa-google"></i>
-                                                </a>
-                                            </li>
+                                            
                                         </ul>
                                     </div>
                                 </div>
@@ -439,7 +413,7 @@
                             <div class="frontside">
                                 <div class="card">
                                     <div class="card-body text-center">
-                                        <p><img class=" img-fluid" src="favicon.ico" alt="card image"></p><h4 class="card-title">Matthias</h4>
+                                        <p><img class=" img-fluid" src="img/faces/Matt4.jpg" alt="card image"></p><h4 class="card-title">Matthias Berjola</h4>
                                         <p class="card-text">Web developpeur-Stagiaire</p>
 
                                     </div>
@@ -448,27 +422,14 @@
                             <div class="backside">
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">Sunlimetech</h4>
-                                        <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                        <h4 class="card-title">Matthias Berjola</h4>
+                                        <p class="card-text">Etudiant en troisième année de licence informatique, Matthias est passioné par le design informatique dans toutes ses formes, le projet connectanou est une opportunité pour lui de pouvoir s'exprimer.</p>
                                         <ul class="list-inline">
+                        
+                    
                                             <li class="list-inline-item">
                                                 <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                    <i class="fa fa-facebook"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                    <i class="fa fa-twitter"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                    <i class="fa fa-skype"></i>
-                                                </a>
-                                            </li>
-                                            <li class="list-inline-item">
-                                                <a class="social-icon text-xs-center" target="_blank" href="#">
-                                                    <i class="fa fa-google"></i>
+                                                    <i class="fa fa-linkedin"></i>
                                                 </a>
                                             </li>
                                         </ul>
@@ -495,7 +456,7 @@
                             <div class="backside">
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">Sunlimetech</h4>
+                                        <h4 class="card-title">Niels</h4>
                                         <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
@@ -542,7 +503,7 @@
                             <div class="backside">
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">Sunlimetech</h4>
+                                        <h4 class="card-title">Audric Lamy</h4>
                                         <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
                                         <ul class="list-inline">
                                             <li class="list-inline-item">

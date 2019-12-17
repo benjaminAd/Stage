@@ -188,7 +188,7 @@
 
   
   <div class="py-5" style="width:100%;background-color:white;text-align:center">
-    <h1 class="display-4" style="color:black" data-aos="flip-right"data-aos="fade-up">ConnectAnou</h1>
+    <h1 class="display-4" style="color:black" data-aos="flip-right"data-aos="fade-up">Connectanou</h1>
   </div>
   <div class="py-5" style="background-color:black;padding:0;text-align:center;">
     <h1 class="display-4" style="color:white" data-aos="fade-up">Connect-Aou</h1>

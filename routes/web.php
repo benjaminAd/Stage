@@ -42,3 +42,4 @@ Route::get('Contact', function () {
 });
 Route::resource('Porteur', 'PorteurController'); //Appel au controleur Porteur lors de la validation du formulaire d'inscription porteur
 Route::resource('Organisation', 'OrganisationController');
+Route::resource('Realisateur', 'ReaProjetController');

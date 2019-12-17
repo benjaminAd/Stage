@@ -29,8 +29,10 @@ class CreateRealisateurProjetsTable extends Migration
             $table->integer('IdNiveauEtudes');
             $table->integer('IdDiplomes')->nullable();
             $table->integer('IdFormations')->nullable();
+            $table->integer('IdOrga');
             $table->integer('IdStatut');
             $table->integer('IdDomaine');
+            $table->foreign('IdOrga')->references('Id')->on('organisations');
             $table->foreign('IdStatut')->references('id')->on('statut_realisateurs');
             $table->foreign('IdNiveauEtudes')->references('Id')->on('statut_realisateurs');
             $table->foreign('IdDiplomes')->references('Id')->on('diplomes');
