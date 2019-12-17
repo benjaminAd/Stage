@@ -58,7 +58,7 @@ class ReaProjetController extends Controller
         $mdp = $request->get("password");
         $confmdp = $request->get("password2");
         if ($mdp != $confmdp) {
-            return redirect()->route("SubscribeRea")->withErrors(["Mdp" => "Les Mots de Passes ne correspondent pas"]);
+            return redirect()->route("SubscribeRea")->withErrors(["Diffmdp" => "Les Mots de Passes ne correspondent pas"]);
         }
         $formations = $request->get("Formation");
         if ($formations == "Autre") {
@@ -99,7 +99,7 @@ class ReaProjetController extends Controller
             'Login' => 'Benji',
             'Mdp' => Hash::make($mdp),
             'Telephone' => '693116051',
-            'DateDeNaissance' => '07/12/1999',
+            'DateNaissance' => $request->get("naissance"),
             'CVURL' => 'c://wamp64/',
             'IdOrga' => $ecole,
             'LinkedinURL' => 'https://www.linkedin.com/in/adolphe-benjamin-183322172?fbclid=IwAR3H4bwzd1nOJrGC_SEtVg5KWMH5CALp694UTp-cL3mlQVS1w2YA5bRyE7s',
@@ -112,6 +112,7 @@ class ReaProjetController extends Controller
             'IdDomaine' => 0
         ]);
         $realisateur->save();
+        return redirect()->route('connect')->with('sucess', 'Réalisateur ajouté');
     }
 
     /**

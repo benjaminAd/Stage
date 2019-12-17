@@ -9,9 +9,10 @@
 @include('navbar')
      <div class="d-flex justify-content-center align-items-center divCon mt-5">
      <form class="border border-light p-5 divConnect needs-validation" action="{{{url("Realisateur")}}}" method="POST">
+       {{csrf_field()}}
       <img class="img-fluid rounded-circle mx-auto d-block" src="./img/fav_png150vct.png" alt="Logo" />
       <p class="h4 mb-4 text-center">Inscrivez-vous en tant que Réalisateur de Projet</p>
-
+      @if ($errors->has('Diffmdp')) <div class="alert alert-danger">{{ $errors->first('Diffmdp') }}</div> @endif
       <div class="row">
         <div class="form-group col">
           <label for="nom">Nom<span id="important">*</span></label>
@@ -134,7 +135,12 @@
           <a href="#" class="lien">Politique de Confidentialités</a> de
           Connectanou</label><span id="important">*</span>
       </div>
-      <div class="g-recaptcha form-group" data-sitekey="6LeTmMAUAAAAADw7uH0DmeFBI9x0YeqhCZos-AFR"></div>
+      <div class="form-group">
+        <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY')}}"></div>
+        @if ($errors->has('g-recaptcha-response'))
+              <div class="alert alert-danger">{{ $errors->first('g-recaptcha-response') }}</div>
+        @endif
+      </div>
       <!-- <script src="https://www.google.com/recaptcha/api.js?render=6LdxmMAUAAAAAGaKb_PBUkAazJGtn_kBjNI1zViW"></script>
         <script>
         grecaptcha.ready(function() {

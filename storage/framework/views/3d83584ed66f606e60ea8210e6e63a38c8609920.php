@@ -68,7 +68,7 @@
             <span class="progress-right">
               <span class="progress-bar"></span>
             </span>
-            <div class="progress-value">0</div>
+            <div class="progress-value">10</div>
           </div>
           <h2 class="h6 font-weight-bold text-center mb-4" data-aos="fade-up">Réalisateurs</h2>
         </div>
@@ -83,7 +83,7 @@
             <span class="progress-right">
               <span class="progress-bar"></span>
             </span>
-            <div class="progress-value">0</div>
+            <div class="progress-value">1</div>
           </div>
           <h2 class="h6 font-weight-bold text-center mb-4" data-aos="fade-up">Porteurs de projets</h2>
         </div>
@@ -97,7 +97,7 @@
             <span class="progress-right">
               <span class="progress-bar"></span>
             </span>
-            <div class="progress-value">0</div>
+            <div class="progress-value">1</div>
           </div>
           <h2 class="h6 font-weight-bold text-center mb-4" data-aos="fade-up">Projets réalisés</h2>
         </div>
@@ -187,11 +187,11 @@
 
   
   <div class="py-5" style="width:100%;background-color:white;text-align:center">
-    <h1 class="display-4" style="color:black" data-aos="flip-right"data-aos="fade-up">ConnectAnou</h1>
+    <h1 class="display-4" style="color:black" data-aos="flip-right"data-aos="fade-up">Connectanou</h1>
   </div>
   <div class="py-5" style="background-color:black;padding:0;text-align:center;">
     <h1 class="display-4" style="color:white" data-aos="fade-up">Connect-Aou</h1>
-    <a href="#" style="color:white"><h2 class="display-7" style="color:white" data-aos="fade-up">En cliquant ici</h2><a>
+    <a href="<?php echo e(url('login')); ?>" style="color:white"><h2 class="display-7" style="color:white" data-aos="fade-up">En cliquant ici</h2><a>
 
 
 

@@ -36,11 +36,7 @@
                     </a>
                 </li>
                 <div class="btn-group">
-
                 <a  class="btn btn-primary " title="Se Connecter"  href="{{url('login')}}" aria-haspopup="true" aria-expanded="false" style="line-height:25px;">
-
-                <button type="button" class="btn btn-primary " title="Se Connecter"  href="{{route('connect')}}"  aria-haspopup="true">
-
                         Connexion
                 </a>
                 </div>
