@@ -36,11 +36,11 @@
                     </a>
                 </li>
                 <div class="btn-group">
-<<<<<<< HEAD
+
                 <a  class="btn btn-primary " title="Se Connecter"  href="{{url('login')}}" aria-haspopup="true" aria-expanded="false" style="line-height:25px;">
-=======
+
                 <button type="button" class="btn btn-primary " title="Se Connecter"  href="{{route('connect')}}"  aria-haspopup="true">
->>>>>>> 20f746fa992ad80310424c881a9d02af45f1aba4
+
                         Connexion
                 </a>
                 </div>
