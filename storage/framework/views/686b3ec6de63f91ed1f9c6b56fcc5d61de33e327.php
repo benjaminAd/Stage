@@ -7,33 +7,26 @@
 <?php $__env->startSection('body'); ?>
 <?php echo $__env->make('navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
      <div class="d-flex justify-content-center align-items-center divCon mt-5">
-     <form class="border border-light p-5 divConnect needs-validation" action="<?php echo e(url("Realisateur")); ?>" method="POST" novalidate>
+     <form class="border border-light p-5 divConnect needs-validation" action="<?php echo e(url("Realisateur")); ?>" method="POST">
+       <?php echo e(csrf_field()); ?>
+
       <img class="img-fluid rounded-circle mx-auto d-block" src="./img/fav_png150vct.png" alt="Logo" />
       <p class="h4 mb-4 text-center">Inscrivez-vous en tant que Réalisateur de Projet</p>
-
+      <?php if($errors->has('Diffmdp')): ?> <div class="alert alert-danger"><?php echo e($errors->first('Diffmdp')); ?></div> <?php endif; ?>
       <div class="row">
         <div class="form-group col">
           <label for="nom">Nom<span id="important">*</span></label>
-          <input type="text" name="nom" class="form-control" id="nom" placeholder="ex : Payet" required />
-          <div class="invalid-feedback">
-            Entrez un nom
-          </div>
+          <input type="text" name="nom" class="form-control" id="nom" placeholder="ex : Payet"  />
         </div>
         &nbsp;&nbsp;&nbsp;
         <div class="form-group col">
           <label for="prenom">Prénom<span id="important">*</span></label>
-          <input type="text" name="prenom" class="form-control" id="prenom" placeholder="ex : Marc" required />
-          <div class="invalid-feedback">
-            Entrez un prénom
-          </div>
+          <input type="text" name="prenom" class="form-control" id="prenom" placeholder="ex : Marc"  />
         </div>
       </div>
       <div class="form-group">
         <label for="naissance">Date de Naissance<span id="important">*</span></label>
-        <input class="form-control" name="naissance" type="date" value="" id="naissance" required />
-        <div class="invalid-feedback">
-          Entrez votre Date de naissance
-        </div>
+        <input class="form-control" name="naissance" type="date" value="" id="naissance" />
       </div>
       <div class="form-group">
         <label>Statut</label>
@@ -94,10 +87,7 @@
       <!-- Email -->
       <div class="form-group">
         <label for="login">Adresse E-Mail<span id="important">*</span></label>
-        <input type="email" name="mail" id="mail" class="form-control" placeholder="ex : MarcPayet97@gmail.com" required />
-        <div class="invalid-feedback">
-          Entrez une adresse mail.
-        </div>
+        <input type="email" name="mail" id="mail" class="form-control" placeholder="ex : MarcPayet97@gmail.com"  />
       </div>
       <div class="form-group">
         <label for="login">Pseudo</label>
@@ -106,17 +96,11 @@
       <!-- Password -->
       <div class="form-group">
         <label for="password">Mot de Passe<span id="important">*</span></label>
-        <input type="password" name="password" id="mdp" class="form-control" placeholder="***************" required />
-        <div class="invalid-feedback">
-          Entrez un mot de passe valide.
-        </div>
+        <input type="password" name="password" id="mdp" class="form-control" placeholder="***************"  />
       </div>
       <div class="form-group">
         <label for="password2">Confirmez votre Mot de Passe<span id="important">*</span></label>
-        <input type="password" name="password2" id="mdp2" class="form-control" placeholder="***************" required />
-        <div class="invalid-feedback">
-          Entrez un mot de passe valide.
-        </div>
+        <input type="password" name="password2" id="mdp2" class="form-control" placeholder="***************"  />
       </div>
       <div class="form-group">
         <label for="linkedin">Lien vers votre page Linkedin</label>
@@ -143,21 +127,20 @@
             </div>
           </div> -->
         <label>Importez votre CV<span id="important">*</span></label>
-        <input type="file" class="form-control" required>
-        <div class="invalid-feedback">
-          Importez votre CV.
-        </div>
+        <input type="file" class="form-control" >
       </div>
       <div class="custom-control custom-checkbox form-group">
-        <input type="checkbox" class="custom-control-input" id="customCheck1" required />
+        <input type="checkbox" class="custom-control-input" id="customCheck1" />
         <label class="custom-control-label" for="customCheck1">J'accepte les conditions et la
           <a href="#" class="lien">Politique de Confidentialités</a> de
           Connectanou</label><span id="important">*</span>
-        <div class="invalid-feedback">
-          Veuillez cocher la case.
-        </div>
       </div>
-      <div class="g-recaptcha form-group" data-sitekey="6LeTmMAUAAAAADw7uH0DmeFBI9x0YeqhCZos-AFR"></div>
+      <div class="form-group">
+        <div class="g-recaptcha" data-sitekey="<?php echo e(env('CAPTCHA_KEY')); ?>"></div>
+        <?php if($errors->has('g-recaptcha-response')): ?>
+              <div class="alert alert-danger"><?php echo e($errors->first('g-recaptcha-response')); ?></div>
+        <?php endif; ?>
+      </div>
       <!-- <script src="https://www.google.com/recaptcha/api.js?render=6LdxmMAUAAAAAGaKb_PBUkAazJGtn_kBjNI1zViW"></script>
         <script>
         grecaptcha.ready(function() {
