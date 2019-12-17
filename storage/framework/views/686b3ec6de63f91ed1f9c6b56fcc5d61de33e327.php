@@ -7,7 +7,7 @@
 <?php $__env->startSection('body'); ?>
 <?php echo $__env->make('navbar', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
      <div class="d-flex justify-content-center align-items-center divCon mt-5">
-    <form class="border border-light p-5 divConnect needs-validation" action="#" novalidate>
+     <form class="border border-light p-5 divConnect needs-validation" action="<?php echo e(url("Realisateur")); ?>" method="POST" novalidate>
       <img class="img-fluid rounded-circle mx-auto d-block" src="./img/fav_png150vct.png" alt="Logo" />
       <p class="h4 mb-4 text-center">Inscrivez-vous en tant que Réalisateur de Projet</p>
 
@@ -57,7 +57,7 @@
       </div>
       <div class="form-group" id="EcoleAjout">
         <label>Nom de votre Ecole</label>
-        <input type="text" class="form-control" name="EcoleNom" id="EcoleNom"/>
+        <input type="text" class="form-control" placeholder="ex : Université de La Réunion" name="EcoleNom" id="EcoleNom"/>
       </div>
        <div class="form-group" id="Formations">
         <label>Formation en cours</label>
@@ -71,7 +71,7 @@
       </div>
       <div class="form-group" id="FormationAjout">
         <label>Nom de votre Formation</label>
-        <input type="text" class="form-control" name="NomFormation">
+        <input type="text" class="form-control" placeholder="ex : Licence Informatique" name="NomFormation">
       </div>
       <div class="form-group">
         <label for="domaine">Domaine</label>
