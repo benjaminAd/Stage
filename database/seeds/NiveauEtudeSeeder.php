@@ -15,6 +15,9 @@ class NiveauEtudeSeeder extends Seeder
             'NiveauEtude' => '< BAC'
         ]);
         \Illuminate\Support\Facades\DB::table('niveau_etudes')->insert([
+            'NiveauEtude' => 'BAC'
+        ]);
+        \Illuminate\Support\Facades\DB::table('niveau_etudes')->insert([
             'NiveauEtude' => 'BAC +1'
         ]);
         \Illuminate\Support\Facades\DB::table('niveau_etudes')->insert([

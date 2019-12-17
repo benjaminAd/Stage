@@ -58,7 +58,21 @@
       </div>
       <div class="form-group" id="EcoleAjout">
         <label>Nom de votre Ecole</label>
-        <input type="text" class="form-control" name="EcoleNom" id="EcoleNom"/>
+        <input type="text" class="form-control" placeholder="ex : Université de La Réunion" name="EcoleNom" id="EcoleNom"/>
+      </div>
+       <div class="form-group" id="Formations">
+        <label>Formation en cours</label>
+        <select name="Formation" id="Formation" class="custom-select">
+          <option value="" selected>Formation</option>
+          @foreach ($Formations as $Formation)
+            <option value="{{{$Formation->Id}}}">{{{$Formation->Formations}}}</option>
+          @endforeach
+          <option value="Autre">Autre</option>
+        </select>
+      </div>
+      <div class="form-group" id="FormationAjout">
+        <label>Nom de votre Formation</label>
+        <input type="text" class="form-control" placeholder="ex : Licence Informatique" name="NomFormation">
       </div>
       <div class="form-group">
         <label for="domaine">Domaine</label>

@@ -14,7 +14,7 @@ class CreateRealisateurProjetsTable extends Migration
     public function up()
     {
         Schema::create('realisateur_projets', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('Id');
             $table->string('Nom');
             $table->string('Prenom');
             $table->string('Email');
@@ -23,15 +23,19 @@ class CreateRealisateurProjetsTable extends Migration
             $table->double('Telephone');
             $table->date('DateNaissance');
             $table->string('CVURL');
-            $table->integer('IdOrga')->nullable();
             $table->string('LinkedinURL');
-            $table->string('PhotoDeProfilURL');
             $table->integer('NbProjets');
             $table->integer('NbPoints');
             $table->integer('IdNiveauEtudes');
+            $table->integer('IdDiplomes')->nullable();
+            $table->integer('IdFormations')->nullable();
             $table->integer('IdStatut');
-            $table->foreign('IdOrga')->references('Id')->on('organisations');
-            $table->foreign('IdNiveauEtudes')->references('Id')->on('niveau_etudes');
+            $table->integer('IdDomaine');
+            $table->foreign('IdStatut')->references('id')->on('statut_realisateurs');
+            $table->foreign('IdNiveauEtudes')->references('Id')->on('statut_realisateurs');
+            $table->foreign('IdDiplomes')->references('Id')->on('diplomes');
+            $table->foreign('IdFormations')->references('Id')->on('formations');
+            $table->foreign('IdDomaine')->references('Id')->on('domaines');
             $table->timestamps();
         });
     }

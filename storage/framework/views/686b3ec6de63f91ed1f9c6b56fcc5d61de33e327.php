@@ -59,6 +59,20 @@
         <label>Nom de votre Ecole</label>
         <input type="text" class="form-control" name="EcoleNom" id="EcoleNom"/>
       </div>
+       <div class="form-group" id="Formations">
+        <label>Formation en cours</label>
+        <select name="Formation" id="Formation" class="custom-select">
+          <option value="" selected>Formation</option>
+          <?php $__currentLoopData = $Formations; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $Formation): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <option value="<?php echo e($Formation->Id); ?>"><?php echo e($Formation->Formations); ?></option>
+          <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+          <option value="Autre">Autre</option>
+        </select>
+      </div>
+      <div class="form-group" id="FormationAjout">
+        <label>Nom de votre Formation</label>
+        <input type="text" class="form-control" name="NomFormation">
+      </div>
       <div class="form-group">
         <label for="domaine">Domaine</label>
         <select name="Domains" id="Domaines" class="custom-select">
