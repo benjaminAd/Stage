@@ -1,6 +1,7 @@
 $(function() {
 	$('#Formations').hide();
 	$('#EcoleAjout').hide();
+	$('#FormationAjout').hide();
 	$("select[name='Ecole']").change(function() {
 		var val = $(this).val();
 		if (val == 'autre') {
@@ -18,6 +19,14 @@ $(function() {
 		} else {
 			$('#ecole').hide();
 			$('#Formations').hide();
+		}
+	});
+	$("select[name='Formation']").change(function() {
+		var val = $(this).val();
+		if (val == 'Autre') {
+			$('#FormationAjout').show();
+		} else {
+			$('#FormationAjout').hide();
 		}
 	});
 });

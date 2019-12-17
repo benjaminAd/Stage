@@ -18,11 +18,13 @@ class ReaProjetController extends Controller
         $NiveauEtude = DB::table('niveau_etudes')->select('NiveauEtude', 'id')->get();
         $Ecoles = DB::table('organisations')->select('RaisonSociale', 'Id')->where('IdTypeOrga', 3)->get();
         $Domaines = DB::table('domaines')->select('Domaines', 'Id')->get();
+        $Formations = DB::table('formations')->select('Formations', 'Id')->get();
         return view('Maquette InscriptionReaProjet.SubscribeReaProjet', [
             'NiveauxEtude' => $NiveauEtude,
             'Ecoles' => $Ecoles,
             'Statuts' => $Statuts,
-            'Domaines' => $Domaines
+            'Domaines' => $Domaines,
+            'Formations' => $Formations
         ]);
     }
 
