@@ -29,35 +29,18 @@
         <!-- Slide One - Set the background image for this slide in the line below -->
        
         <div class="carousel-item active"
-          style="background-image: url('img/ban003_stratupw.png');">
+          style="background-image: url('img/ban002_pp.png');">
 
-          <div class="carousel-caption" style="align-item:center;">
-            <a class="ct-btn-scroll ct-js-btn-scroll" href="#scroll"><img alt="Arrow Down Icon"
-                src="https://www.solodev.com/assets/anchor/arrow-down.png"></a>
-              <br><br><br><br><br><br><br><br><br><br><br><br>
-
-          </div>
+         
         </div>
         
         <!-- Slide Two - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('img/ban004_web.png')">
-          <div class="carousel-caption ">
-            
-            <a class="ct-btn-scroll ct-js-btn-scroll" href="#scroll"><img alt="Arrow Down Icon"
-              src="https://www.solodev.com/assets/anchor/arrow-down.png"></a>
-            <br><br><br><br><br><br><br><br><br><br><br><br>
-
-          </div>
+        <div class="carousel-item" style="background-image: url('img/ban200.png')">
+          
         </div>
         <!-- Slide Three - Set the background image for this slide in the line below -->
-        <div class="carousel-item" style="background-image: url('img/ban003.png')">
-          <div class="carousel-caption">
-            
-            <a class="ct-btn-scroll ct-js-btn-scroll" href="#scroll"><img alt="Arrow Down Icon"
-              src="https://www.solodev.com/assets/anchor/arrow-down.png"></a>
-            <br><br><br><br><br><br><br><br><br><br><br><br>
-
-          </div>
+        <div class="carousel-item" style="background-image: url('img/ban100.png')">
+          
         </div>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -124,64 +107,88 @@
     <!-- End Page Content-->
 
   </div>
-  <div class="py-5" style="background-color:black;padding:0;text-align:center;">
-    <h1 class="display-4" style="color:white;" data-aos="fade-up">C'est aussi</h1>
-    <br>
-    <h2 class="display-7" style="color:white;" data-aos="fade-up" data-aos-duration="3000">De beaux projets </h2>
-    <br><br>
-    <!-- Grid row -->
-<div class="row">
+  <div class="section section-dark text-center">
+    <div class="container">
+      <h2 class="title" data-aos="fade-up">Découvrez des membres de notre équipe</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card card-profile card-plain" data-aos="fade-right" data-aos-duration="3000">
+            <div class="card-avatar">
+              <a href="#avatar">
+                <img src="img/faces/Matt4.jpg" alt="...">
+              </a>
+            </div>
+            <div class="card-body">
+              <a href="#paper-kit">
+                <div class="author">
+                  <h4 class="card-title">Berjola Matthias</h4>
+                  <h6 class="card-category">Web-developpeur/Stagiaire</h6>
+                </div>
+              </a>
+              <p class="card-description text-center">
+                Etudiant en troisième année de licence informatique, il intervient dans le projet en tant que web designer</p>
+            </div>
+            <div class="card-footer text-center">
+              <a href="https://www.linkedin.com/in/matthias-berjola-54551715b/" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-profile card-plain" data-aos="fade-down" data-aos-duration="3000">
+            <div class="card-avatar">
+              <a href="#avatar">
+                <img src="img/Jenna_photo.jpg" alt="...">
+              </a>
+            </div>
+            <div class="card-body">
+              <a href="#paper-kit">
+                <div class="author">
+                  <h4 class="card-title">Jenna pourchot</h4>
+                  <h6 class="card-category">Présidente de l'association</h6>
+                </div>
+              </a>
+              <p class="card-description text-center">
+                Formatrice et consultante indépendante dans plusieurs écoles informatique de l'ile de la Réunion, Jenna est à l'origine de l'idée de cette association et souhaite revaloriser les jeunes talents réunionnais
+              </p>
+            </div>
+            <div class="card-footer text-center">
+              <a href="https://www.linkedin.com/in/jenna-pourchot-90923446/" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-profile card-plain" data-aos="fade-left" data-aos-duration="3000">
+            <div class="card-avatar">
+              <a href="#avatar">
+                <img src="img/faces/Benjamin.jpg" alt="...">
+              </a>
+            </div>
+            <div class="card-body">
+              <a href="#paper-kit">
+                <div class="author">
+                  <h4 class="card-title">Benjamin Adolphe</h4>
+                  <h6 class="card-category">Web developpeur/Stagiaire</h6>
+                </div>
+              </a>
+              <p class="card-description text-center">
+                Etudiant en troisième année de licence informatique, il intervient dans le projet en tant que web developpeur
+               </p>
+            </div>
+            <div class="card-footer text-center">
+              <a href="https://www.linkedin.com/in/adolphe-benjamin-183322172/" class="btn btn-link btn-just-icon btn-neutral"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-
-
-</div>
-<!-- Grid row -->
-
-<!-- Grid row -->
-<div class="gallery" id="gallery">
-
-  <!-- Grid column -->
-  <div class="mb-3 pics animation all 2">
-    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(73).jpg" alt="Card image cap">
+    <a href="#" style="color:white"><h2 class="display-7" style="color:white" data-aos="fade-right">En voir plus </h2></a>
   </div>
-  <!-- Grid column -->
-
-  <!-- Grid column -->
-  <div class="mb-3 pics animation all 1">
-    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain1.jpg" alt="Card image cap">
-  </div>
-  <!-- Grid column -->
-
-  <!-- Grid column -->
-  <div class="mb-3 pics animation all 1">
-    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain2.jpg" alt="Card image cap">
-  </div>
-  <!-- Grid column -->
-
-  <!-- Grid column -->
-  <div class="mb-3 pics animation all 2">
-    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg" alt="Card image cap">
-  </div>
-  <!-- Grid column -->
-
-  <!-- Grid column -->
-  <div class="mb-3 pics animation all 2">
-    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg" alt="Card image cap">
-  </div>
-  <!-- Grid column -->
-
-  <!-- Grid column -->
-  <div class="mb-3 pics animation all 1">
-    <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Vertical/mountain3.jpg" alt="Card image cap">
-  </div>
-  <!-- Grid column -->
-
-</div>
 <!-- Grid row -->
 
   
   <div class="py-5" style="width:100%;background-color:white;text-align:center">
-    <h1 class="display-4" style="color:black" data-aos="fade-up"data-aos="fade-up">ConnectAnou</h1>
+    <h1 class="display-4" style="color:black" data-aos="flip-right"data-aos="fade-up">ConnectAnou</h1>
   </div>
   <div class="py-5" style="background-color:black;padding:0;text-align:center;">
     <h1 class="display-4" style="color:white" data-aos="fade-up">Connect-Aou</h1>
