@@ -36,9 +36,9 @@
                     </a>
                 </li>
                 <div class="btn-group">
-                <button type="button" class="btn btn-primary " title="Se Connecter"  href="{{url('login')}}"  aria-haspopup="true">
+                <a  class="btn btn-primary " title="Se Connecter"  href="{{url('login')}}" aria-haspopup="true" aria-expanded="false" style="line-height:25px;">
                         Connexion
-                    </button>
+                </a>
                 </div>
                 <div class="btn-group">
                     <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

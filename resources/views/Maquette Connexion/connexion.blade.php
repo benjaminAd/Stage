@@ -4,6 +4,11 @@
 @endsection
 @section('link')
     <link rel="stylesheet" href="./css/style_Connec.css">
+    <link href="css/extra.css" rel="stylesheet" />
+    <link href="css/carousel.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
 @endsection
 @section('body')
 @include('navbar')

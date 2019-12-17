@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('Accueil');
 });
 
+
 Route::get('login', function () {
     return view('Maquette Connexion.connexion');
 })->name('connect');
