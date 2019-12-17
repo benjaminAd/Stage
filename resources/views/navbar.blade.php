@@ -2,7 +2,7 @@
     <div class="container">
         <div class="navbar-translate">
         <a class="navbar-brand" href="{{{url("/")}}}" rel="tooltip" data-placement="bottom" style="color:#E0363E;">
-                 <img  src="img/logo_transp.png" id="favicon">
+                 <img  src="img/logo_transp.png" id="favicon" style="width:150px;height:50px;">
             </a>
             <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-bar bar1"></span>
@@ -16,7 +16,7 @@
                     <a href="https://demos.creative-tim.com/paper-kit-2/docs/1.0/getting-started/introduction.html" class="nav-link" style="color:#1E4F87;">L'association</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" title="Retourner à la page d'acceuil" data-placement="bottom" href="{{{route('equipe')}}}" style="color:#1E4F87;">
+                <a class="nav-link" title="Notre équipe" data-placement="bottom" href="{{{route('equipe')}}}" style="color:#1E4F87;">
                         Equipe
                     </a>
                 </li>
@@ -35,20 +35,20 @@
                         Contact
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" title="Se Connecter" data-placement="bottom" href="{{url('login')}}" style="color:#1E4F87;">
+                <div class="btn-group">
+                <button type="button" class="btn btn-primary " title="Se Connecter"  href="{{url('login')}}"  aria-haspopup="true">
                         Connexion
-                    </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:#1E4F87;">
-                    Inscription
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    </button>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        S'inscrire
+                    </button>
+                    <div class="dropdown-menu">
                     <a class="dropdown-item" href="{{{route('PortProjetSub')}}}">Réalisateur</a>
                     <a class="dropdown-item" href="#">Porteur</a>
                     </div>
-                </li>
+                </div>
             </ul>
         </div>
     </div>
