@@ -22,12 +22,14 @@ class ReaProjetController extends Controller
         $Ecoles = DB::table('organisations')->select('RaisonSociale', 'Id')->where('IdTypeOrga', 3)->get();
         $Domaines = DB::table('domaines')->select('Domaines', 'Id')->get();
         $Formations = DB::table('formations')->select('Formations', 'Id')->get();
+        $Diplomes = DB::table('diplomes')->select('label', 'Id')->get();
         return view('Maquette InscriptionReaProjet.SubscribeReaProjet', [
             'NiveauxEtude' => $NiveauEtude,
             'Ecoles' => $Ecoles,
             'Statuts' => $Statuts,
             'Domaines' => $Domaines,
-            'Formations' => $Formations
+            'Formations' => $Formations,
+            'Diplomes' => $Diplomes
         ]);
     }
 
@@ -75,6 +77,13 @@ class ReaProjetController extends Controller
             ]);
             $ecole = DB::table('organisations')->where('RaisonSociale', $request->get('EcoleNom'))->value('Id');
         }
+        $diplome = $request->get("Diplome");
+        if ($diplome == "Autre") {
+            DB::table('diplomes')->insert([
+                'label' => $request->get('NomDiplome')
+            ]);
+            $diplome = DB::table('diplomes')->where('label', $request->get('NomDiplome'))->value('Id');
+        }
         //Création du client et de la vérification du captcha par google
         $client = new Client([
             'base_uri' => 'https://www.google.com/recaptcha/api/',
@@ -93,23 +102,23 @@ class ReaProjetController extends Controller
         }
         //Création d'un réalisateur de projet
         $realisateur = new RealisateurProjet([
-            'Nom' => 'ADOLPHE',
-            'Prenom' => 'Benjamin',
-            'Email' => 'adolphe906@gmail.com',
-            'Login' => 'Benji',
+            'Nom' => $request->get('nom'),
+            'Prenom' => $request->get('prenom'),
+            'Email' => $request->get('mail'),
+            'Login' => $request->get('login'),
             'Mdp' => Hash::make($mdp),
-            'Telephone' => '693116051',
+            'Telephone' => $request->get('tel'),
             'DateNaissance' => $request->get("naissance"),
             'CVURL' => 'c://wamp64/',
             'IdOrga' => $ecole,
-            'LinkedinURL' => 'https://www.linkedin.com/in/adolphe-benjamin-183322172?fbclid=IwAR3H4bwzd1nOJrGC_SEtVg5KWMH5CALp694UTp-cL3mlQVS1w2YA5bRyE7s',
+            'LinkedinURL' => $request->get('linkedin'),
             'NbProjets' => 0,
             'NbPoints' => 0,
-            'IdNiveauEtudes' => 0,
-            'IdDiplomes' => 0,
+            'IdNiveauEtudes' => $request->get('NiveauEtude'),
+            'IdDiplomes' => $diplome,
             'IdFormations' => $formations,
-            'IdStatut' => 0,
-            'IdDomaine' => 0
+            'IdStatut' => $request->get('statut'),
+            'IdDomaine' => $request->get('Domains')
         ]);
         $realisateur->save();
         return redirect()->route('connect')->with('sucess', 'Réalisateur ajouté');

@@ -28,6 +28,11 @@
         <label for="naissance">Date de Naissance<span id="important">*</span></label>
         <input class="form-control" name="naissance" type="date" value="" id="naissance" />
       </div>
+       <div class="form-group">
+                <label for="tel">Numéro de Téléphone</label>
+                <input type="tel" name="tel" id="telephone" class="form-control" placeholder="ex : 0692 xx xx xx" value="{{old('tel')}}"/>
+                @if ($errors->has('tel')) <div class="alert alert-danger">{{ $errors->first('tel') }}</div> @endif
+            </div>
       <div class="form-group">
         <label>Statut</label>
         <select name="statut" class="custom-select" id="statut">
@@ -35,7 +40,6 @@
           @foreach ($Statuts as $Statut)
         <option value="{{{$Statut->id}}}">{{{$Statut->Statut}}}</option>
           @endforeach
-          <option value="ajouter">Ajouter</option>
         </select>
       </div>
       <div id="ecole" class="form-group">
@@ -84,9 +88,23 @@
           @endforeach
         </select>
       </div>
+      <div class="form-group" id="Formations">
+        <label>Diplome</label>
+        <select name="Diplome" id="Diplome" class="custom-select">
+          <option value="" selected>Diplome</option>
+          @foreach ($Diplomes as $Diplome)
+            <option value="{{{$Diplome->Id}}}">{{{$Diplome->label}}}</option>
+          @endforeach
+          <option value="Autre">Autre</option>
+        </select>
+      </div>
+      <div class="form-group" id="DiplomeAjout">
+        <label>Nom de votre Diplome</label>
+        <input type="text" class="form-control" placeholder="ex : Licence Informatique" name="NomDiplome">
+      </div>
       <!-- Email -->
       <div class="form-group">
-        <label for="login">Adresse E-Mail<span id="important">*</span></label>
+        <label for="mail">Adresse E-Mail<span id="important">*</span></label>
         <input type="email" name="mail" id="mail" class="form-control" placeholder="ex : MarcPayet97@gmail.com"  />
       </div>
       <div class="form-group">

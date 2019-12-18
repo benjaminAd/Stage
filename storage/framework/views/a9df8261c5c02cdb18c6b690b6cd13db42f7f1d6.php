@@ -45,8 +45,8 @@
                         S'inscrire
                     </button>
                     <div class="dropdown-menu">
-                    <a class="dropdown-item" href="<?php echo e(route('PortProjetSub')); ?>">Réalisateur</a>
-                    <a class="dropdown-item" href="<?php echo e(route('SubscribeRea')); ?>">Porteur</a>
+                    <a class="dropdown-item" href="<?php echo e(route('PortProjetSub')); ?>">Porteur</a>
+                    <a class="dropdown-item" href="<?php echo e(route('SubscribeRea')); ?>">Réalisateur</a>
                     </div>
                 </div>
             </ul>
