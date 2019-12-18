@@ -57,13 +57,34 @@ class ReaProjetController extends Controller
             // dd($token);
             return redirect()->route('SubscribeRea')->withErrors(['g-recaptcha-response' => 'veuillez cocher le Captcha']);
         }
+        //Règles de validations
         $mdp = $request->get("password");
         $confmdp = $request->get("password2");
         if ($mdp != $confmdp) {
             return redirect()->route("SubscribeRea")->withErrors(["Diffmdp" => "Les Mots de Passes ne correspondent pas"]);
         }
+        if (((DB::table('realisateur_projets')->where('Email', $request->get("mail"))->count()) == 1)) { //Si l'email est déjà dans la base alors on n'accepte pas l'inscription
+            return redirect()->route('SubscribeRea')->withErrors(['MailUsed' => 'Cette Adresse E-mail est déjà utilisé par l\'un de nos clients']);
+        }
+        if ((DB::table('realisateur_projets')->where('Login', $request->get('login'))->count()) == 1) { //De même pour le pseudo
+            return redirect()->route('SubscribeRea')->withErrors(['LoginUsed' => 'Ce pseudo est déjà utilisé par l\'un de nos clients']);
+        }
+        $this->validate($request, [
+            'nom' => 'required|alpha',
+            'prenom' => 'required|alpha',
+            'mail' => 'required|email',
+            'login' => 'required',
+            'password' => 'required|min:6 |regex:#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)# ', //expression régulière autorisant au minimum une minuscule, majuscule,chiffre et un symbole
+            'password2' => 'required|min:6|regex:#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)#',
+            'tel' => 'required',
+            'naissance' => 'required|date',
+            //manque CVURL
+
+        ]);
+        //On récupère la formation selectionné dans le menu déroulant
         $formations = $request->get("Formation");
         if ($formations == "Autre") {
+            //Si le client séléectionne autre alors on va insérer dans la bdd la valeur entrée dans le champs de saisie puis récupérer la valeur de l'id dans la var $formations
             DB::table('formations')->insert([
                 'Formations' => $request->get('NomFormation')
             ]);
