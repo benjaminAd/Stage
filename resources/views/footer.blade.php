@@ -11,7 +11,7 @@
                 <a href="#" target="_blank">Blog</a>
               </li>
               <li>
-                <a href="#" target="_blank">Mention légales</a>
+                <a href="{{{url('mentionLegal')}}}">Mention légales</a>
               </li>
             </ul>
           </nav>

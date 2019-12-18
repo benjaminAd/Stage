@@ -4,6 +4,7 @@
 <?php $__env->startSection('link'); ?>
     <link href="css/extra.css" rel="stylesheet" />
     <link href="css/carousel.css" rel="stylesheet" />
+    <link href="css/animation.css" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
@@ -181,16 +182,11 @@
       </div>
     </div>
 
-    <a href="#" style="color:white"><h2 class="display-7" style="color:white" data-aos="fade-right">En voir plus </h2></a>
+    <a href="ourTeam" style="color:white"><h2 class="display-7" style="color:white" data-aos="fade-right">En voir plus </h2></a>
   </div>
 <!-- Grid row -->
-
-  
-  <div class="py-5" style="width:100%;background-color:white;text-align:center">
-    <h1 class="display-4" style="color:black" data-aos="flip-right"data-aos="fade-up">Connectanou</h1>
-  </div>
   <div class="py-5" style="background-color:black;padding:0;text-align:center;">
-    <h1 class="display-4" style="color:white" data-aos="fade-up">Connect-Aou</h1>
+    <h1 class="display-4" style="color:white;font-weight:bold;" data-aos="fade-up">Connect-Aou</h1>
     <a href="<?php echo e(url('login')); ?>" style="color:white"><h2 class="display-7" style="color:white" data-aos="fade-up">En cliquant ici</h2><a>
 
 

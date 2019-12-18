@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-{{-- Ceci est un test d'un push depuis VS Code --}}
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+@extends('layout')
+@section('title')
+    <title>Mentions légales du site CONNECTANOU</title>
+@endsection
+@section('link')
+     
+@endsection
 
-</head>
-<title>Mentions légales du site CONNECTANOU</title>
-
-
-<h1>Mentions légales et politiques de confidentialité de Connectanou</h1>
+@section('body')
+@include('navbar')
+    <h1>Mentions légales et politiques de confidentialité de Connectanou</h1>
 
 <div class="mention2">
     <br>
@@ -125,8 +120,8 @@
 <p> &nbsp;</p>
 <p> &nbsp;</p>
 <p> &nbsp;</p>
-
-
-</body>
-</html>
-
+@include('footer')
+@endsection
+@section('script')
+    
+@endsection
