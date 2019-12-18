@@ -29,7 +29,7 @@ Route::get('Forgot', function () {
     return view('Maquette MdpForgot.mdpForgot');
 });
 Route::get('mentionLegal', function () {
-    return view('maquette mention légale.mentionLegal');
+    return view('Maquette mentionLegale.mentionLegal');
 });
 Route::get('landingRea', function () {
     return view('maquette landing_rea.landing_rea');

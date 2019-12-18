@@ -21,17 +21,17 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" style="color:#1E4F87;">
+                    <a class="nav-link" title="Like us on Facebook" data-placement="bottom" href="#" style="color:#1E4F87;">
                         Realisateur
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" style="color:#1E4F87;">
+                    <a class="nav-link" title="Follow us on Instagram" data-placement="bottom" href="#" style="color:#1E4F87;">
                         Projets
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" title="Contactez-nous" data-placement="bottom" href="Contact" style="color:#1E4F87;">
+                    <a class="nav-link" title="Contactez-nous" data-placement="bottom" href="{{{url('Contact')}}}" style="color:#1E4F87;">
                         Contact
                     </a>
                 </li>
@@ -46,7 +46,7 @@
                     </button>
                     <div class="dropdown-menu">
                     <a class="dropdown-item" href="{{{route('PortProjetSub')}}}">Réalisateur</a>
-                    <a class="dropdown-item" href="#">Porteur</a>
+                    <a class="dropdown-item" href="{{{route('SubscribeRea')}}}">Porteur</a>
                     </div>
                 </div>
             </ul>
