@@ -76,10 +76,8 @@ class ReaProjetController extends Controller
             'login' => 'required',
             'password' => 'required|min:6 |regex:#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)# ', //expression régulière autorisant au minimum une minuscule, majuscule,chiffre et un symbole
             'password2' => 'required|min:6|regex:#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)#',
-            'tel' => 'required',
+            'tel' => 'required|numeric',
             'naissance' => 'required|date',
-            //manque CVURL
-
         ]);
         //On récupère la formation selectionné dans le menu déroulant
         $formations = $request->get("Formation");

@@ -31,12 +31,12 @@
         <input class="form-control" name="naissance" type="date" value="" id="naissance" />
       </div>
        <div class="form-group">
-                <label for="tel">Numéro de Téléphone</label>
+                <label for="tel">Numéro de Téléphone<span id="important">*</span></label>
                 <input type="tel" name="tel" id="telephone" class="form-control" placeholder="ex : 0692 xx xx xx" value="{{old('tel')}}"/>
                 @if ($errors->has('tel')) <div class="alert alert-danger">{{ $errors->first('tel') }}</div> @endif
             </div>
       <div class="form-group">
-        <label>Statut</label>
+        <label>Statut<span id="important">*</span></label>
         <select name="statut" class="custom-select" id="statut">
           <option value="" selected>Statut</option>
           @foreach ($Statuts as $Statut)
@@ -45,7 +45,7 @@
         </select>
       </div>
       <div id="ecole" class="form-group">
-        <label>École</label>
+        <label>École<span id="important">*</span></label>
         <select name="Ecole" class="custom-select" id="Ecole">
           <option value="" selected>Ecoles</option>
           @foreach ($Ecoles as $Ecole)
@@ -55,13 +55,13 @@
         </select>
       </div>
       <div class="form-group" id="EcoleAjout">
-        <label>Nom de votre Ecole</label>
+        <label>Nom de votre Ecole<span id="important">*</span></label>
         <input type="text" class="form-control" placeholder="ex : Université de La Réunion" name="EcoleNom" id="EcoleNom"/>
       </div>
        <div class="form-group" id="Formations">
-        <label>Formation en cours</label>
+        <label>Formation en cours<span id="important">*</span></label>
         <select name="Formation" id="Formation" class="custom-select">
-          <option value="" selected>Formation</option>
+          <option value="" selected>Formation<span id="important">*</span></option>
           @foreach ($Formations as $Formation)
             <option value="{{{$Formation->Id}}}">{{{$Formation->Formations}}}</option>
           @endforeach
@@ -69,11 +69,11 @@
         </select>
       </div>
       <div class="form-group" id="FormationAjout">
-        <label>Nom de votre Formation</label>
+        <label>Nom de votre Formation<span id="important">*</span></label>
         <input type="text" class="form-control" placeholder="ex : Licence Informatique" name="NomFormation">
       </div>
       <div class="form-group">
-        <label for="domaine">Domaine</label>
+        <label for="domaine">Domaine<span id="important">*</span></label>
         <select name="Domains" id="Domaines" class="custom-select">
           <option value="" selected>Domaine</option>
           @foreach ($Domaines as $Domaine)
@@ -82,7 +82,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label>Niveau d'études</label>
+        <label>Niveau d'études<span id="important">*</span></label>
         <select name="NiveauEtude" class="custom-select col" id="Niveau">
           <option value="" selected>Niveau</option>
           @foreach ($NiveauxEtude as $niveau)
@@ -91,7 +91,7 @@
         </select>
       </div>
       <div class="form-group" id="Formations">
-        <label>Diplome</label>
+        <label>Diplome<span id="important">*</span></label>
         <select name="Diplome" id="Diplome" class="custom-select">
           <option value="" selected>Diplome</option>
           @foreach ($Diplomes as $Diplome)
@@ -101,16 +101,16 @@
         </select>
       </div>
       <div class="form-group" id="DiplomeAjout">
-        <label>Nom de votre Diplome</label>
+        <label>Nom de votre Diplome<span id="important">*</span></label>
         <input type="text" class="form-control" placeholder="ex : Licence Informatique" name="NomDiplome">
       </div>
       <!-- Email -->
       <div class="form-group">
-        <label for="mail">Adresse E-Mail<span id="important">*</span></label>
+        <label for="mail">Adresse E-Mail<span id="important">*</span><span id="important">*</span></label>
         <input type="email" name="mail" id="mail" class="form-control" placeholder="ex : MarcPayet97@gmail.com"  />
       </div>
       <div class="form-group">
-        <label for="login">Pseudo</label>
+        <label for="login">Pseudo<span id="important">*</span></label>
         <input type="text" name="login" class="form-control" id="login" placeholder="ex : BoulangeriePayet974" />
       </div>
       <!-- Password -->
@@ -123,7 +123,7 @@
         <input type="password" name="password2" id="mdp2" class="form-control" placeholder="***************"  />
       </div>
       <div class="form-group">
-        <label for="linkedin">Lien vers votre page Linkedin</label>
+        <label for="linkedin">Lien vers votre page Linkedin<span id="important">*</span></label>
         <input type="url" id="linkedin" name="linkedin" class="form-control" placeholder="ex :www.linkedin.com/in/payet-marc-198755421" />
       </div>
       <div class="form-group files">
