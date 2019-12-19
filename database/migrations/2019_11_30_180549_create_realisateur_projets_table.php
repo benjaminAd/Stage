@@ -29,7 +29,7 @@ class CreateRealisateurProjetsTable extends Migration
             $table->integer('IdNiveauEtudes');
             $table->integer('IdDiplomes')->nullable();
             $table->integer('IdFormations')->nullable();
-            $table->integer('IdOrga');
+            $table->integer('IdOrga')->nullable();
             $table->integer('IdStatut');
             $table->integer('IdDomaine');
             $table->foreign('IdOrga')->references('Id')->on('organisations');

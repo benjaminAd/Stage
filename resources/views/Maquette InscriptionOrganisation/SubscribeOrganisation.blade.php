@@ -19,7 +19,7 @@
             <p class="h4 mb-4 text-center">Inscrivez votre Organisation</p>
             <div class="form-group">
                 <label>SIRET</label>
-                <input type="number" name="siret" class="form-control" id="siret" placeholder="ex : 36252187900034" data-toggle="tooltip" data-placement="right" title="Évitez les espaces dans le Siret"/>
+            <input type="number" name="siret" class="form-control" id="siret" placeholder="ex : 36252187900034" data-toggle="tooltip" value="{{{old("siret")}}}" data-placement="right" title="Évitez les espaces dans le Siret"/>
                  @if ($errors->has('siret')) <div class="alert alert-danger">{{ $errors->first('siret') }}</div> @endif
             </div>
             <div class="form-group">

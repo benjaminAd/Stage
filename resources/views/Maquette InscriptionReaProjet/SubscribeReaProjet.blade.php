@@ -18,17 +18,17 @@
       <div class="row">
         <div class="form-group col">
           <label for="nom">Nom<span id="important">*</span></label>
-          <input type="text" name="nom" class="form-control" id="nom" placeholder="ex : Payet"  />
+          <input type="text" name="nom" class="form-control" id="nom" value="{{{old("nom")}}}" placeholder="ex : Payet"  />
         </div>
         &nbsp;&nbsp;&nbsp;
         <div class="form-group col">
           <label for="prenom">Prénom<span id="important">*</span></label>
-          <input type="text" name="prenom" class="form-control" id="prenom" placeholder="ex : Marc"  />
+          <input type="text" name="prenom" class="form-control" id="prenom" value="{{{old("prenom")}}}" placeholder="ex : Marc"  />
         </div>
       </div>
       <div class="form-group">
         <label for="naissance">Date de Naissance<span id="important">*</span></label>
-        <input class="form-control" name="naissance" type="date" value="" id="naissance" />
+        <input class="form-control" name="naissance" type="date" value="" id="naissance" value="{{{old("naissance")}}}" />
       </div>
        <div class="form-group">
                 <label for="tel">Numéro de Téléphone<span id="important">*</span></label>
@@ -56,7 +56,7 @@
       </div>
       <div class="form-group" id="EcoleAjout">
         <label>Nom de votre Ecole<span id="important">*</span></label>
-        <input type="text" class="form-control" placeholder="ex : Université de La Réunion" name="EcoleNom" id="EcoleNom"/>
+        <input type="text" class="form-control" placeholder="ex : Université de La Réunion" value="{{{old("ecoleNom")}}}" name="EcoleNom" id="EcoleNom"/>
       </div>
        <div class="form-group" id="Formations">
         <label>Formation en cours<span id="important">*</span></label>
@@ -70,7 +70,7 @@
       </div>
       <div class="form-group" id="FormationAjout">
         <label>Nom de votre Formation<span id="important">*</span></label>
-        <input type="text" class="form-control" placeholder="ex : Licence Informatique" name="NomFormation">
+        <input type="text" class="form-control" placeholder="ex : Licence Informatique" value="{{{old("NomFormation")}}}" name="NomFormation">
       </div>
       <div class="form-group">
         <label for="domaine">Domaine<span id="important">*</span></label>
@@ -102,16 +102,16 @@
       </div>
       <div class="form-group" id="DiplomeAjout">
         <label>Nom de votre Diplome<span id="important">*</span></label>
-        <input type="text" class="form-control" placeholder="ex : Licence Informatique" name="NomDiplome">
+        <input type="text" class="form-control" placeholder="ex : Licence Informatique" value="{{{old("NomDiplome")}}}" name="NomDiplome">
       </div>
       <!-- Email -->
       <div class="form-group">
         <label for="mail">Adresse E-Mail<span id="important">*</span><span id="important">*</span></label>
-        <input type="email" name="mail" id="mail" class="form-control" placeholder="ex : MarcPayet97@gmail.com"  />
+        <input type="email" name="mail" id="mail" class="form-control" placeholder="ex : MarcPayet97@gmail.com" value="{{{old("mail")}}}"  />
       </div>
       <div class="form-group">
         <label for="login">Pseudo<span id="important">*</span></label>
-        <input type="text" name="login" class="form-control" id="login" placeholder="ex : BoulangeriePayet974" />
+        <input type="text" name="login" class="form-control" id="login" placeholder="ex : BoulangeriePayet974" value="{{{old("login")}}}" />
       </div>
       <!-- Password -->
       <div class="form-group">
@@ -124,7 +124,7 @@
       </div>
       <div class="form-group">
         <label for="linkedin">Lien vers votre page Linkedin<span id="important">*</span></label>
-        <input type="url" id="linkedin" name="linkedin" class="form-control" placeholder="ex :www.linkedin.com/in/payet-marc-198755421" />
+        <input type="url" id="linkedin" name="linkedin" class="form-control" placeholder="ex :www.linkedin.com/in/payet-marc-198755421" value="{{{old("linkedin")}}}" />
       </div>
       <div class="form-group files">
         <!-- <label for="CV">Importez votre CV<span id="important">*</span></label>
