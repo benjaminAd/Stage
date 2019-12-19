@@ -2,6 +2,7 @@ $(function() {
 	$('#Formations').hide();
 	$('#EcoleAjout').hide();
 	$('#FormationAjout').hide();
+	$('#DiplomeAjout').hide();
 	$("select[name='Ecole']").change(function() {
 		var val = $(this).val();
 		if (val == 'autre') {
@@ -27,6 +28,14 @@ $(function() {
 			$('#FormationAjout').show();
 		} else {
 			$('#FormationAjout').hide();
+		}
+	});
+	$("select[name='Diplome']").change(function() {
+		var val = $(this).val();
+		if (val == 'Autre') {
+			$('#DiplomeAjout').show();
+		} else {
+			$('#DiplomeAjout').hide();
 		}
 	});
 });
