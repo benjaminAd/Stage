@@ -130,7 +130,7 @@ class ReaProjetController extends Controller
             'Mdp' => Hash::make($mdp),
             'Telephone' => $request->get('tel'),
             'DateNaissance' => $request->get("naissance"),
-            'CVURL' => 'c://wamp64/',
+            'CVURL' => null,
             'IdOrga' => $ecole,
             'LinkedinURL' => $request->get('linkedin'),
             'NbProjets' => 0,
@@ -142,7 +142,29 @@ class ReaProjetController extends Controller
             'IdDomaine' => $request->get('Domains')
         ]);
         $realisateur->save();
+        $id = DB::table('realisateur_projets')->where('Login', $request->get('login'))->value('Id');
+        //L'id n'étant attribué que lors de la sauvegarde dans la bdd, on met à jour la base avec le path du CV qui a été uploader par le client et en donnant comme nom l'id qui vient d'être attribué
+        DB::table('realisateur_projets')->where('Id', $id)->update(['CVURL' => $this->uploadDoc($request, $id)]);
         return redirect()->route('connect')->with('sucess', 'Réalisateur ajouté');
+    }
+    function uploadDoc(Request $request, $id)
+    {
+        /**
+         * Condition afin d'accepter le fichier:
+         *  Le champs ne peut pas être vide
+         * image
+         * Extension : jpg,jpeg,png
+         * Taille maximale de 2048 octets
+         * @return Path du fichier uploader 
+         */
+        $this->validate($request, [
+            'select_file' => 'required|file|mimes:doc,docx,pdf|max:2048'
+        ]);
+        $cv = $request->file('select_file'); //Méthode fournie par Laravel afin de récupérer le fichier uploader
+        $new_name = $id . '.' . $cv->getClientOriginalExtension(); //La variable new_name va nous permettre de renommer l'image comme bon nous semble et on récupère l'extension originale du fichier
+        //dans ce cas, on renome l'image avec l'id de l'organistion et on reprend l'extension du fichier uploader par client
+        $cv->move(public_path("CV"), $new_name); //Méthode fournie par Laravel qui permet de donner le nouveau chemin pour le fichier uploader
+        return public_path("CV\\") . $new_name; //Renvoie le path du fichier afin de l'ajouter dans la bdd dans la fonction store
     }
 
     /**

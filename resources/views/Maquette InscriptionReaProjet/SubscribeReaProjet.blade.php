@@ -8,7 +8,7 @@
 @section('body')
 @include('navbar')
      <div class="d-flex justify-content-center align-items-center divCon mt-5">
-     <form class="border border-light p-5 divConnect needs-validation" action="{{{url("Realisateur")}}}" method="POST">
+     <form class="border border-light p-5 divConnect needs-validation" action="{{{url("Realisateur")}}}" method="POST" enctype="multipart/form-data">
        {{csrf_field()}}
       <img class="img-fluid rounded-circle mx-auto d-block" src="./img/fav_png150vct.png" alt="Logo" />
       <p class="h4 mb-4 text-center">Inscrivez-vous en tant que Réalisateur de Projet</p>
@@ -75,7 +75,7 @@
       <div class="form-group">
         <label for="domaine">Domaine</label>
         <select name="Domains" id="Domaines" class="custom-select">
-          <option value="" selected>Domaines</option>
+          <option value="" selected>Domaine</option>
           @foreach ($Domaines as $Domaine)
             <option value="{{{$Domaine->Id}}}">{{{$Domaine->Domaines}}}</option>
           @endforeach
@@ -84,7 +84,7 @@
       <div class="form-group">
         <label>Niveau d'études</label>
         <select name="NiveauEtude" class="custom-select col" id="Niveau">
-          <option value="" selected>Niveaux</option>
+          <option value="" selected>Niveau</option>
           @foreach ($NiveauxEtude as $niveau)
             <option value="{{{$niveau->id}}}">{{{$niveau->NiveauEtude}}}</option>
           @endforeach
@@ -147,7 +147,7 @@
             </div>
           </div> -->
         <label>Importez votre CV<span id="important">*</span></label>
-        <input type="file" class="form-control" >
+        <input type="file" class="form-control" name="select_file" >
       </div>
       <div class="custom-control custom-checkbox form-group">
         <input type="checkbox" class="custom-control-input" id="customCheck1" />

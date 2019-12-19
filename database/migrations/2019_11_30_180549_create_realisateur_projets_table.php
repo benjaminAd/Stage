@@ -22,7 +22,7 @@ class CreateRealisateurProjetsTable extends Migration
             $table->string('Mdp');
             $table->double('Telephone');
             $table->date('DateNaissance');
-            $table->string('CVURL');
+            $table->string('CVURL')->nullable();
             $table->string('LinkedinURL');
             $table->integer('NbProjets');
             $table->integer('NbPoints');
