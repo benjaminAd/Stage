@@ -19,16 +19,19 @@
         <div class="form-group col">
           <label for="nom">Nom<span id="important">*</span></label>
           <input type="text" name="nom" class="form-control" id="nom" value="<?php echo e(old("nom")); ?>" placeholder="ex : Payet"  />
+           <?php if($errors->has('nom')): ?> <div class="alert alert-danger"><?php echo e($errors->first('nom')); ?></div> <?php endif; ?>
         </div>
         &nbsp;&nbsp;&nbsp;
         <div class="form-group col">
           <label for="prenom">Prénom<span id="important">*</span></label>
           <input type="text" name="prenom" class="form-control" id="prenom" value="<?php echo e(old("prenom")); ?>" placeholder="ex : Marc"  />
+           <?php if($errors->has('prenom')): ?> <div class="alert alert-danger"><?php echo e($errors->first('prenom')); ?></div> <?php endif; ?>
         </div>
       </div>
       <div class="form-group">
         <label for="naissance">Date de Naissance<span id="important">*</span></label>
         <input class="form-control" name="naissance" type="date" value="" id="naissance" value="<?php echo e(old("naissance")); ?>" />
+         <?php if($errors->has('naissance')): ?> <div class="alert alert-danger"><?php echo e($errors->first('naissance')); ?></div> <?php endif; ?>
       </div>
        <div class="form-group">
                 <label for="tel">Numéro de Téléphone<span id="important">*</span></label>
@@ -108,23 +111,28 @@
       <div class="form-group">
         <label for="mail">Adresse E-Mail<span id="important">*</span><span id="important">*</span></label>
         <input type="email" name="mail" id="mail" class="form-control" placeholder="ex : MarcPayet97@gmail.com" value="<?php echo e(old("mail")); ?>"  />
+         <?php if($errors->has('mail')): ?> <div class="alert alert-danger"><?php echo e($errors->first('mail')); ?></div> <?php endif; ?>
       </div>
       <div class="form-group">
         <label for="login">Pseudo<span id="important">*</span></label>
         <input type="text" name="login" class="form-control" id="login" placeholder="ex : BoulangeriePayet974" value="<?php echo e(old("login")); ?>" />
+         <?php if($errors->has('login')): ?> <div class="alert alert-danger"><?php echo e($errors->first('login')); ?></div> <?php endif; ?>
       </div>
       <!-- Password -->
       <div class="form-group">
         <label for="password">Mot de Passe<span id="important">*</span></label>
         <input type="password" name="password" id="mdp" class="form-control" placeholder="***************"  />
+         <?php if($errors->has('password')): ?> <div class="alert alert-danger"><?php echo e($errors->first('password')); ?></div> <?php endif; ?>
       </div>
       <div class="form-group">
         <label for="password2">Confirmez votre Mot de Passe<span id="important">*</span></label>
         <input type="password" name="password2" id="mdp2" class="form-control" placeholder="***************"  />
+         <?php if($errors->has('password2')): ?> <div class="alert alert-danger"><?php echo e($errors->first('password2')); ?></div> <?php endif; ?>
       </div>
       <div class="form-group">
         <label for="linkedin">Lien vers votre page Linkedin<span id="important">*</span></label>
         <input type="url" id="linkedin" name="linkedin" class="form-control" placeholder="ex :www.linkedin.com/in/payet-marc-198755421" value="<?php echo e(old("linkedin")); ?>" />
+         <?php if($errors->has('linkedin')): ?> <div class="alert alert-danger"><?php echo e($errors->first('linkedin')); ?></div> <?php endif; ?>
       </div>
       <div class="form-group files">
         <!-- <label for="CV">Importez votre CV<span id="important">*</span></label>
@@ -148,12 +156,14 @@
           </div> -->
         <label>Importez votre CV<span id="important">*</span></label>
         <input type="file" class="form-control" name="select_file" >
+         <?php if($errors->has('select_file')): ?> <div class="alert alert-danger"><?php echo e($errors->first('select_file')); ?></div> <?php endif; ?>
       </div>
       <div class="custom-control custom-checkbox form-group">
-        <input type="checkbox" class="custom-control-input" id="customCheck1" />
+        <input type="checkbox" class="custom-control-input" id="customCheck1" name="check" />
         <label class="custom-control-label" for="customCheck1">J'accepte les conditions et la
           <a href="#" class="lien">Politique de Confidentialités</a> de
           Connectanou</label><span id="important">*</span>
+           <?php if($errors->has('check')): ?> <div class="alert alert-danger"><?php echo e($errors->first('check')); ?></div> <?php endif; ?>
       </div>
       <div class="form-group">
         <div class="g-recaptcha" data-sitekey="<?php echo e(env('CAPTCHA_KEY')); ?>"></div>

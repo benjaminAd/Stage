@@ -19,16 +19,19 @@
         <div class="form-group col">
           <label for="nom">Nom<span id="important">*</span></label>
           <input type="text" name="nom" class="form-control" id="nom" value="{{{old("nom")}}}" placeholder="ex : Payet"  />
+           @if ($errors->has('nom')) <div class="alert alert-danger">{{ $errors->first('nom') }}</div> @endif
         </div>
         &nbsp;&nbsp;&nbsp;
         <div class="form-group col">
           <label for="prenom">Prénom<span id="important">*</span></label>
           <input type="text" name="prenom" class="form-control" id="prenom" value="{{{old("prenom")}}}" placeholder="ex : Marc"  />
+           @if ($errors->has('prenom')) <div class="alert alert-danger">{{ $errors->first('prenom') }}</div> @endif
         </div>
       </div>
       <div class="form-group">
         <label for="naissance">Date de Naissance<span id="important">*</span></label>
         <input class="form-control" name="naissance" type="date" value="" id="naissance" value="{{{old("naissance")}}}" />
+         @if ($errors->has('naissance')) <div class="alert alert-danger">{{ $errors->first('naissance') }}</div> @endif
       </div>
        <div class="form-group">
                 <label for="tel">Numéro de Téléphone<span id="important">*</span></label>
@@ -106,25 +109,30 @@
       </div>
       <!-- Email -->
       <div class="form-group">
-        <label for="mail">Adresse E-Mail<span id="important">*</span><span id="important">*</span></label>
+        <label for="mail">Adresse E-Mail<span id="important">*</span></label>
         <input type="email" name="mail" id="mail" class="form-control" placeholder="ex : MarcPayet97@gmail.com" value="{{{old("mail")}}}"  />
+         @if ($errors->has('mail')) <div class="alert alert-danger">{{ $errors->first('mail') }}</div> @endif
       </div>
       <div class="form-group">
         <label for="login">Pseudo<span id="important">*</span></label>
         <input type="text" name="login" class="form-control" id="login" placeholder="ex : BoulangeriePayet974" value="{{{old("login")}}}" />
+         @if ($errors->has('login')) <div class="alert alert-danger">{{ $errors->first('login') }}</div> @endif
       </div>
       <!-- Password -->
       <div class="form-group">
         <label for="password">Mot de Passe<span id="important">*</span></label>
         <input type="password" name="password" id="mdp" class="form-control" placeholder="***************"  />
+         @if ($errors->has('password')) <div class="alert alert-danger">{{ $errors->first('password') }}</div> @endif
       </div>
       <div class="form-group">
         <label for="password2">Confirmez votre Mot de Passe<span id="important">*</span></label>
         <input type="password" name="password2" id="mdp2" class="form-control" placeholder="***************"  />
+         @if ($errors->has('password2')) <div class="alert alert-danger">{{ $errors->first('password2') }}</div> @endif
       </div>
       <div class="form-group">
         <label for="linkedin">Lien vers votre page Linkedin<span id="important">*</span></label>
         <input type="url" id="linkedin" name="linkedin" class="form-control" placeholder="ex :www.linkedin.com/in/payet-marc-198755421" value="{{{old("linkedin")}}}" />
+         @if ($errors->has('linkedin')) <div class="alert alert-danger">{{ $errors->first('linkedin') }}</div> @endif
       </div>
       <div class="form-group files">
         <!-- <label for="CV">Importez votre CV<span id="important">*</span></label>
@@ -148,12 +156,14 @@
           </div> -->
         <label>Importez votre CV<span id="important">*</span></label>
         <input type="file" class="form-control" name="select_file" >
+         @if ($errors->has('select_file')) <div class="alert alert-danger">{{ $errors->first('select_file') }}</div> @endif
       </div>
       <div class="custom-control custom-checkbox form-group">
-        <input type="checkbox" class="custom-control-input" id="customCheck1" />
+        <input type="checkbox" class="custom-control-input" id="customCheck1" name="check" />
         <label class="custom-control-label" for="customCheck1">J'accepte les conditions et la
           <a href="#" class="lien">Politique de Confidentialités</a> de
           Connectanou</label><span id="important">*</span>
+           @if ($errors->has('check')) <div class="alert alert-danger">{{ $errors->first('check') }}</div> @endif
       </div>
       <div class="form-group">
         <div class="g-recaptcha" data-sitekey="{{env('CAPTCHA_KEY')}}"></div>

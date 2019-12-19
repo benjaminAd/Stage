@@ -78,6 +78,7 @@ class ReaProjetController extends Controller
             'password2' => 'required|min:6|regex:#^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*\W)#',
             'tel' => 'required|numeric',
             'naissance' => 'required|date',
+            'check' => 'required'
         ]);
         //On récupère la formation selectionné dans le menu déroulant
         $formations = $request->get("Formation");
