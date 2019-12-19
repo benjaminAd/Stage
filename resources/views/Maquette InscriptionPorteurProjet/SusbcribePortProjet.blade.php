@@ -15,6 +15,7 @@
             <p class="h4 mb-4 text-center">Inscrivez-vous en tant que Porteur de Projet</p>
             @if ($errors->has('Diffmdp')) <div class="alert alert-danger">{{ $errors->first('Diffmdp') }}</div> @endif
             @if ($errors->has('MailUsed')) <div class="alert alert-danger">{{ $errors->first('MailUsed') }}</div> @endif
+            @if ($errors->has('LoginUsed')) <div class="alert alert-danger">{{ $errors->first('LoginUsed') }}</div> @endif
             {{-- @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>

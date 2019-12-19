@@ -115,7 +115,7 @@ class OrganisationController extends Controller
         $new_name = $id . '.' . $image->getClientOriginalExtension(); //La variable new_name va nous permettre de renommer l'image comme bon nous semble
         //dans ce cas, on renome l'image avec l'id de l'organistion et on reprend l'extension du fichier uploader par client
         $image->move(public_path("img/Logo"), $new_name); //Méthode fournie par Laravel qui permet de donner le nouveau chemin pour le fichier uploader
-        return public_path("img\Logo\\") . $new_name; //
+        return public_path("img\Logo\\") . $new_name; //Renvoie le path du fichier afin de l'ajouter dans la bdd dans la fonction store
     }
 
     /**

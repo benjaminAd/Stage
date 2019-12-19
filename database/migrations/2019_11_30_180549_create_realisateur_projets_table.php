@@ -22,14 +22,14 @@ class CreateRealisateurProjetsTable extends Migration
             $table->string('Mdp');
             $table->double('Telephone');
             $table->date('DateNaissance');
-            $table->string('CVURL');
+            $table->string('CVURL')->nullable();
             $table->string('LinkedinURL');
             $table->integer('NbProjets');
             $table->integer('NbPoints');
             $table->integer('IdNiveauEtudes');
             $table->integer('IdDiplomes')->nullable();
             $table->integer('IdFormations')->nullable();
-            $table->integer('IdOrga');
+            $table->integer('IdOrga')->nullable();
             $table->integer('IdStatut');
             $table->integer('IdDomaine');
             $table->foreign('IdOrga')->references('Id')->on('organisations');
