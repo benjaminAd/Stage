@@ -84,18 +84,25 @@ class ReaProjetController extends Controller
         //On récupère la formation selectionné dans le menu déroulant
         $formations = $request->get("Formation");
         if ($formations == "Autre") {
+            if (((DB::table('realisateur_projets')->where('Email', $request->get("mail"))->count()) == 1)) { //Si l'email est déjà dans la base alors on n'accepte pas l'inscription
+                return redirect()->route('SubscribeRea')->withErrors(['MailUsed' => 'Cette Adresse E-mail est déjà utilisé par l\'un de nos clients']);
+            }
             //Si le client séléectionne autre alors on va insérer dans la bdd la valeur entrée dans le champs de saisie puis récupérer la valeur de l'id dans la var $formations
-            DB::table('formations')->insert([
-                'Formations' => $request->get('NomFormation')
-            ]);
+            if (((DB::table('formations')->where('Formations', $request->get('NomFormation'))->count()) == 0)) {
+                DB::table('formations')->insert([
+                    'Formations' => $request->get('NomFormation')
+                ]);
+            }
             $formations = DB::table('formations')->where('Formations', $request->get('NomFormation'))->value('Id');
         }
         $ecole = $request->get("Ecole");
         if ($ecole == "autre") {
-            DB::table('organisations')->insert([
-                'IdTypeOrga' => 3,
-                'RaisonSociale' => $request->get('EcoleNom')
-            ]);
+            if (((DB::table('organisations')->where('RaisonSociale', $request->get('EcoleNom'))->count()) == 0)) {
+                DB::table('organisations')->insert([
+                    'IdTypeOrga' => 3,
+                    'RaisonSociale' => $request->get('EcoleNom')
+                ]);
+            }
             $ecole = DB::table('organisations')->where('RaisonSociale', $request->get('EcoleNom'))->value('Id');
         }
         $diplome = $request->get("Diplome");
