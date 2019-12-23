@@ -65,9 +65,9 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'realisateurs' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\realisateur_projets::class,App\Porteur::class,
         ],
 
         // 'users' => [

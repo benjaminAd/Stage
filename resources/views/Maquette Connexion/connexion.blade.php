@@ -14,7 +14,11 @@
 @include('navbar')
 <br/><br/><br/><br/>
     <div class="d-flex justify-content-center align-items-center divCon mt-4">
-        <form class="text-center border border-light p-5 divConnect" action="#">
+
+    
+    
+        <form class="text-center border border-light p-5 divConnect" method="POST">
+        {{csrf_field()}}
             <img class="img-fluid rounded-circle" src="./img/fav_png150vct.png" alt="Logo"/>
             <p class="h4 mb-4">Connectez-vous</p>
 
@@ -23,13 +27,19 @@
                 <label>Adresse mail ou Login :</label>
                 <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" name="MailLog"
                        placeholder="ex : ConnectanouGerant974 ou boris.payet@gmail.com" required>
+                @if($errors->has('MailLog'))
+                <p class="help is-danger">{{$errors->first('MailLog')}}</p>
+                @endif
             </div>
 
             <!-- Password -->
             <div class="form-group">
                 <label>Mot de Passe : </label>
                 <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="**********"
-                       required>
+                       required name='password' name="password">
+                @if($errors->has('password'))
+                <p class="help is-danger">{{$errors->first('password')}}</p>
+                @endif
             </div>
             <div class="d-flex justify-content-around">
                 <div>
@@ -57,7 +67,7 @@
         });
     </script> -->
             <!-- Sign in button -->
-            <button class="btn btn-info btn-block my-4 " type="submit" id="bouton">Se connecter</button>
+            <button class="btn btn-info btn-block my-4 " type="submit" id="bouton" value="Login">Se connecter</button>
 
             <!-- Register -->
             <p>Vous voulez devenir un porteur de projet?

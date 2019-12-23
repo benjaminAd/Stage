@@ -16,15 +16,17 @@ Route::get('/', function () {
 });
 
 
-Route::get('login', function () {
-    return view('Maquette Connexion.connexion');
-})->name('connect');
+
 Route::get('ourTeam', function () {
     return view('Maquette Notre_equipe.section_equipe');
 })->name('equipe');
 Route::get('SubscribePortProjet', 'PorteurController@index')->name('PortProjetSub');
 Route::get('SubscribeOrga', 'OrganisationController@index')->name('SubscribeOrga');
 Route::get('SubscribeReaProjet', 'ReaProjetController@index')->name('SubscribeRea');
+Route::get('/login','LoginController@formulaire');
+Route::post('/login','LoginController@traitement');
+
+
 Route::get('Forgot', function () {
     return view('Maquette MdpForgot.mdpForgot');
 });
