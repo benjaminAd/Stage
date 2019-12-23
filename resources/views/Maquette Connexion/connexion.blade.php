@@ -27,8 +27,8 @@
                 <label>Adresse mail ou Login :</label>
                 <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" name="MailLog"
                        placeholder="ex : ConnectanouGerant974 ou boris.payet@gmail.com" required>
-                @if($errors->has('email'))
-                <p class="help is-danger">{{$errors->first('email')}}</p>
+                @if($errors->has('MailLog'))
+                <p class="help is-danger">{{$errors->first('MailLog')}}</p>
                 @endif
             </div>
 
@@ -36,7 +36,7 @@
             <div class="form-group">
                 <label>Mot de Passe : </label>
                 <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="**********"
-                       required name='password'>
+                       required name='password' name="password">
                 @if($errors->has('password'))
                 <p class="help is-danger">{{$errors->first('password')}}</p>
                 @endif
