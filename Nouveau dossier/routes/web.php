@@ -23,8 +23,8 @@ Route::get('ourTeam', function () {
 Route::get('SubscribePortProjet', 'PorteurController@index')->name('PortProjetSub');
 Route::get('SubscribeOrga', 'OrganisationController@index')->name('SubscribeOrga');
 Route::get('SubscribeReaProjet', 'ReaProjetController@index')->name('SubscribeRea');
-Route::get('/login','LoginController@formulaire');
-Route::post('/login','LoginController@traitement');
+Route::get('/login', 'LoginController@formulaire')->name('connect');
+Route::post('/login', 'LoginController@traitement');
 
 
 Route::get('Forgot', function () {
@@ -35,10 +35,10 @@ Route::get('mentionLegal', function () {
 });
 Route::get('landingRea', function () {
     return view('maquette landing_rea.landing_rea');
-});
+})->name('landingRea');
 Route::get('landingPor', function () {
     return view('maquette landing_porteur.landing_por');
-});
+})->name('landingPort');
 Route::get('Contact', function () {
     return view('maquette contact.contact');
 });

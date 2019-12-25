@@ -14,21 +14,21 @@
 @include('navbar')
 <br/><br/><br/><br/>
     <div class="d-flex justify-content-center align-items-center divCon mt-4">
-
-    
     
         <form class="text-center border border-light p-5 divConnect" method="POST">
         {{csrf_field()}}
             <img class="img-fluid rounded-circle" src="./img/fav_png150vct.png" alt="Logo"/>
             <p class="h4 mb-4">Connectez-vous</p>
-
+            @if($errors->has('ErreurLogin'))
+                <div class="alert alert-danger">{{$errors->first('ErreurLogin')}}</div>
+            @endif
             <!-- Email -->
             <div class="form-group">
                 <label>Adresse mail ou Login :</label>
                 <input type="text" id="defaultLoginFormEmail" class="form-control mb-4" name="MailLog"
                        placeholder="ex : ConnectanouGerant974 ou boris.payet@gmail.com" required>
                 @if($errors->has('MailLog'))
-                <p class="help is-danger">{{$errors->first('MailLog')}}</p>
+                <div class="alert alert-danger">{{$errors->first('MailLog')}}</div>
                 @endif
             </div>
 
@@ -38,7 +38,7 @@
                 <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="**********"
                        required name='password' name="password">
                 @if($errors->has('password'))
-                <p class="help is-danger">{{$errors->first('password')}}</p>
+                <div class="alert alert-danger">{{$errors->first('password')}}</div>
                 @endif
             </div>
             <div class="d-flex justify-content-around">

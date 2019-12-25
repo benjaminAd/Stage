@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use GuzzleHttp\Client;
-use App\RealisateurProjet;
+use App\realisateur_projets;
 
 class ReaProjetController extends Controller
 {
@@ -128,7 +128,7 @@ class ReaProjetController extends Controller
             return redirect()->route('SubscribeOrga')->withErrors(['g-recaptcha-response' => 'Une erreur est survenue veuillez compléter le Captcha']);
         }
         //Création d'un réalisateur de projet
-        $realisateur = new RealisateurProjet([
+        $realisateur = new realisateur_projets([
             'Nom' => $request->get('nom'),
             'Prenom' => $request->get('prenom'),
             'Email' => $request->get('mail'),
