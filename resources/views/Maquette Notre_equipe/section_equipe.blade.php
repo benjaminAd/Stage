@@ -66,9 +66,9 @@
                     <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
                         <div class="mainflip">
                             <div class="frontside">
-                                <div class="card">
+                                <div class="card ">
                                     <div class="card-body text-center">
-                                        <p><img src="img/Jenna_photo.jpg"></p>
+                                        <p><img src="img/Jenna_photo.jpg" ></p>
                                         <h4 class="card-title">Jenna Pourchot</h4>
                                         <p class="card-text">Présidente de l'association</p>
 
@@ -117,7 +117,7 @@
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
                                         <h4 class="card-title">Marie-Ange</h4>
-                                        <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                        <p class="card-text">Marie-Ange est secrétaire générale de l’association CONNECTANOU. Elle assiste la présidente sur des tâches administratives.</p>
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
                                                 <a class="social-icon text-xs-center" target="_blank" href="#">
@@ -155,8 +155,8 @@
                             <div class="backside">
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">Sunlimetech</h4>
-                                        <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                        <h4 class="card-title">Aymerick</h4>
+                                        <p class="card-text">Aymerik est étudiant à SUPINFO Réunion en deuxième année, il est développeur web. </p>
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
                                                 <a class="social-icon text-xs-center" target="_blank" href="#">
@@ -249,8 +249,8 @@
                             <div class="backside">
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">Sunlimetech</h4>
-                                        <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                        <h4 class="card-title">Jonathan</h4>
+                                        <p class="card-text">Jonathan est étudiant en Master à l’HESIP, sa spécialité est le développement Web, langage PHP</p>
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
                                                 <a class="social-icon text-xs-center" target="_blank" href="#">
@@ -297,7 +297,7 @@
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
                                         <h4 class="card-title">Yann</h4>
-                                        <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                        <p class="card-text">Yann est étudiant à L'AFPAR et intervient dans le projet connectanou en mettant en oeuvre son expérience et ses compétences dans la programmation PHP et son framework Laravel</p>
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
                                                 <a class="social-icon text-xs-center" target="_blank" href="#">
@@ -343,8 +343,8 @@
                             <div class="backside">
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
-                                        <h4 class="card-title">Sunlimetech</h4>
-                                        <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                        <h4 class="card-title">Jessica</h4>
+                                        <p class="card-text">Jessica est étudiante à l’IFR en alternance, elle fait des études de community manager mais elle est infographiste pour CONNECTANOU.</p>
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
                                                 <a class="social-icon text-xs-center" target="_blank" href="#">
@@ -458,7 +458,7 @@
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
                                         <h4 class="card-title">Niels</h4>
-                                        <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                        <p class="card-text">Niels participe au projets connectanou en tant que web developpeur</p>
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
                                                 <a class="social-icon text-xs-center" target="_blank" href="#">
@@ -505,7 +505,7 @@
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
                                         <h4 class="card-title">Audric Lamy</h4>
-                                        <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
+                                        <p class="card-text">Audric est formateur et étudiant à L'Hesip il participe au projet Connectanou en tant qu'expert PHP</p>
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
                                                 <a class="social-icon text-xs-center" target="_blank" href="#">

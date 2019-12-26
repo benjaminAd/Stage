@@ -34,20 +34,34 @@ class LoginController extends Controller
 
         if(filter_var($user_data['email'], FILTER_VALIDATE_EMAIL)) {
             //user sent their email 
+            
             if(Auth::guard('real')->attempt(['email' => $request->get('MailLog'), 'password' => $request->get('password')])){
             return view("maquette landing_rea.landing_rea");
-        }
+        
+                }
+            
             
             if(Auth::guard('porteur')->attempt(['email' => $request->get('MailLog'), 'password' => $request->get('password')])){
-                    return view("maquette landing_porteur.landing_por");}
+                    return view("maquette landing_porteur.landing_por");
+                }
+            else{
+                return redirect()->route('connect')->withErrors(['ErreurLogin' => 'Login ou mot de passe incorrecte']);
+            }
             
-        } else {
+        } else{
             //they sent their username instead 
             if(Auth::guard('real')->attempt(['Login' => $request->get('MailLog'), 'password'=>$request->get('password')])){
-            return view("maquette landing_rea.landing_rea");}
+            return view("maquette landing_rea.landing_rea");
+            }
             if(Auth::guard('porteur')->attempt(['Login' => $request->get('MailLog'), 'password' => $request->get('password')])){
-                return view("maquette landing_porteur.landing_por");}
+                return view("maquette landing_porteur.landing_por");
+            }
+            else{
+                return redirect()->route('connect')->withErrors(['ErreurLogin' => 'Login ou mot de passe incorrecte']);
+            }
         }
+
+       
         
 
        
