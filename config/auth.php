@@ -45,6 +45,17 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
+        'real' =>[
+            'driver' =>'session',
+            'provider'=>'rea'
+
+        ],
+
+        'porteur' =>[
+            'driver' =>'session',
+            'provider' =>'por',
+        ]
     ],
 
     /*
@@ -65,10 +76,21 @@ return [
     */
 
     'providers' => [
-        'realisateurs' => [
+        'users' => [
             'driver' => 'eloquent',
-            'model' => App\realisateur_projets::class,App\Porteur::class,
+            'model' => App\User::class,
         ],
+
+        'rea' =>[
+            'driver' =>'eloquent',
+            'model'=>App\realisateur_projets::class,
+
+        ],
+
+        'por' =>[
+            'driver' =>'eloquent',
+            'model'=>App\Porteur::class,
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

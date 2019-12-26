@@ -11,6 +11,7 @@ class realisateur_projets extends Model implements Authenticatable
 
     use BasicAuth;
 
+    protected $guard = 'real';
     protected $fillable = ['Nom', 'Prenom', 'Email', 'Login', 'Mdp', 'DateNaissance', 'Telephone', 'DateNaissance', 'CVURL', 'LinkedinURL', 'IdOrga', 'NbProjets', 'NbPoints', 'IdNiveauEtudes', 'IdDiplomes', 'IdFormations', 'IdStatut', 'IdDomaine'];
   /**
      * Get the password for the user.

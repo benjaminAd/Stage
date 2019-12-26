@@ -23,7 +23,7 @@ Route::get('ourTeam', function () {
 Route::get('SubscribePortProjet', 'PorteurController@index')->name('PortProjetSub');
 Route::get('SubscribeOrga', 'OrganisationController@index')->name('SubscribeOrga');
 Route::get('SubscribeReaProjet', 'ReaProjetController@index')->name('SubscribeRea');
-Route::get('/login','LoginController@formulaire');
+Route::get('/login','LoginController@formulaire')->name('connect');
 Route::post('/login','LoginController@traitement');
 
 
