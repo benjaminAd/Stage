@@ -9,6 +9,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 @endsection
 @section('body')
@@ -21,7 +22,40 @@
   <header>
     @include('navbar')
   </header>
-    
+    <br><br><br><br><br><br><br><br>
+
+  <div class="container">
+
+  <h1>Plan de Connectanou </h1>
+    <br>
+  <ul>
+    <li style="list-style-type: none;"><a class="btn btn-danger"  href="{{{route('equipe')}}}">Notre équipe</a></li> 
+    <br>
+    <li  style="list-style-type: none;"><a class="btn btn-warning"  href="{{{route('PortProjetSub')}}}">Inscription porteur</a></li> 
+    <br>
+    <li  style="list-style-type: none;"><a class="btn btn-secondary"  href="{{{route('SubscribeRea')}}}">Inscription réalisateur</a></li>
+    <br>
+    <li  style="list-style-type: none;"><a  class="btn btn-primary" href="{{{url('Contact')}}}" >Contact</a></li>
+    <br>
+    <li  style="list-style-type: none;"><a class="btn btn-success" href="{{{url('mentionLegal')}}}">Mention légales</a></li>
+    <br>
+    <li  style="list-style-type: none;"><a class="btn btn-info" href="{{{url('connect')}}}">Connexion</a></li>
+
+  </ul>
+
+ 
+
+
+
+ 
+
+</div>
+<br><br><br>
+    @include('footer')
+    <br><br>
+
+
+
 
 
 

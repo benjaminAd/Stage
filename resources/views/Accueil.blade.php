@@ -188,8 +188,8 @@
   </div>
 <!-- Grid row -->
   <div class="py-5" style="background-color:black;padding:0;text-align:center;">
-    <h1 class="display-4" style="color:white;font-weight:bold;" data-aos="fade-up">Connect-Aou</h1>
-    <a href="{{url('login')}}" style="color:white"><h2 class="display-7" style="color:white" data-aos="fade-up">En cliquant ici</h2><a>
+    <h1 class="display-4" style="color:white;font-weight:bold;" data-aos="fade-up">Contactez-nous</h1>
+    <a href="{{url('contact')}}" style="color:white"><h2 class="display-7" style="color:white" data-aos="fade-up">En cliquant ici</h2><a>
 
 
 

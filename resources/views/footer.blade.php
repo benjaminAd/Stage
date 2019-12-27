@@ -13,6 +13,13 @@
               <li>
                 <a href="{{{url('mentionLegal')}}}">Mentions légales</a>
               </li>
+              <li>
+              <a target="_blank" href="https://www.linkedin.com/company/connectanou/"><i class="fa fa-linkedin" style="color:#4969b1;"></i></a>
+              </li>
+              <li>
+              <a target="_blank" href="https://www.facebook.com/connectanou/"><i class="fa fa-facebook" style="color:#4969b1;"></i></a>
+              </li>
+              
             </ul>
           </nav>
           <div class="credits ml-auto">

@@ -449,7 +449,7 @@
                                 <div class="card">
                                     <div class="card-body text-center">
                                         <p><img class=" img-fluid" src="favicon.ico" alt="card image"></p><h4 class="card-title">Niels</h4>
-                                        <p class="card-text">Web developpeur-Stagiaire</p>
+                                        <p class="card-text">Stagiaire en communication</p>
 
                                     </div>
                                 </div>
@@ -458,7 +458,7 @@
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
                                         <h4 class="card-title">Niels</h4>
-                                        <p class="card-text">Niels participe au projets connectanou en tant que web developpeur</p>
+                                        <p class="card-text">Niels participe au projet connectanou sur la réalisation des personas</p>
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
                                                 <a class="social-icon text-xs-center" target="_blank" href="#">
@@ -505,7 +505,7 @@
                                 <div class="card">
                                     <div class="card-body text-center mt-4">
                                         <h4 class="card-title">Audric Lamy</h4>
-                                        <p class="card-text">Audric est formateur et étudiant à L'Hesip il participe au projet Connectanou en tant qu'expert PHP</p>
+                                        <p class="card-text">Audric est formateur et étudiant à SupInfo il participe au projet Connectanou en tant qu'expert PHP</p>
                                         <ul class="list-inline">
                                             <li class="list-inline-item">
                                                 <a class="social-icon text-xs-center" target="_blank" href="#">

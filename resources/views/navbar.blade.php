@@ -15,24 +15,20 @@
                 <li class="nav-item">
                     <a href="https://demos.creative-tim.com/paper-kit-2/docs/1.0/getting-started/introduction.html" class="nav-link" style="color:#1E4F87;">L'association</a>
                 </li>
+
                 <li class="nav-item">
-                <a class="nav-link" title="Notre équipe" data-placement="bottom" href="{{{route('equipe')}}}" style="color:#1E4F87;">
-                        Equipe
+                    <a class="nav-link" title="Réalisateur de projets" data-placement="bottom" href="#" style="color:#1E4F87;">
+                        Realisateurs de Projets
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" title="Like us on Facebook" data-placement="bottom" href="#" style="color:#1E4F87;">
-                        Realisateur
+                    <a class="nav-link" title="Porteurs de Projets" data-placement="bottom" href="#" style="color:#1E4F87;">
+                        Porteurs de Projets
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" title="Follow us on Instagram" data-placement="bottom" href="#" style="color:#1E4F87;">
+                    <a class="nav-link" title="Projets" data-placement="bottom" href="#" style="color:#1E4F87;">
                         Projets
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" title="Contactez-nous" data-placement="bottom" href="{{{url('Contact')}}}" style="color:#1E4F87;">
-                        Contact
                     </a>
                 </li>
                 <div class="btn-group">
