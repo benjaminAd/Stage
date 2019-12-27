@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator; 
 use Auth;
+use Illuminate\Support\MessageBag;
 
 
 
@@ -40,12 +41,12 @@ class LoginController extends Controller
         
                 }
             
-            
-            if(Auth::guard('porteur')->attempt(['email' => $request->get('MailLog'), 'password' => $request->get('password')])){
+            else if(Auth::guard('porteur')->attempt(['email' => $request->get('MailLog'), 'password' => $request->get('password')])){
                     return view("maquette landing_porteur.landing_por");
                 }
             else{
-                return redirect()->route('connect')->withErrors(['ErreurLogin' => 'Login ou mot de passe incorrecte']);
+                $errors=new MessageBag(['password'=>['login ou mot de passe incorrecte']]);
+                 return redirect()->route('connect')->withErrors($errors);
             }
             
         } else{
@@ -53,12 +54,14 @@ class LoginController extends Controller
             if(Auth::guard('real')->attempt(['Login' => $request->get('MailLog'), 'password'=>$request->get('password')])){
             return view("maquette landing_rea.landing_rea");
             }
-            if(Auth::guard('porteur')->attempt(['Login' => $request->get('MailLog'), 'password' => $request->get('password')])){
+            else if(Auth::guard('porteur')->attempt(['Login' => $request->get('MailLog'), 'password' => $request->get('password')])){
                 return view("maquette landing_porteur.landing_por");
             }
             else{
-                return redirect()->route('connect')->withErrors(['ErreurLogin' => 'Login ou mot de passe incorrecte']);
-            }
+                $errors= new MessageBag(['password'=>['login ou mot de passe incorrecte']]);
+                 return redirect()->route('connect')->withErrors($errors);
+           }
+            
         }
 
        

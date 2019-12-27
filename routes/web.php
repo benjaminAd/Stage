@@ -16,6 +16,12 @@ Route::get('/', function () {
 });
 
 
+Route::get('/plan',function(){
+
+    return view('Site_map');
+
+});
+
 
 Route::get('ourTeam', function () {
     return view('Maquette Notre_equipe.section_equipe');
@@ -25,6 +31,7 @@ Route::get('SubscribeOrga', 'OrganisationController@index')->name('SubscribeOrga
 Route::get('SubscribeReaProjet', 'ReaProjetController@index')->name('SubscribeRea');
 Route::get('/login','LoginController@formulaire')->name('connect');
 Route::post('/login','LoginController@traitement');
+
 
 
 Route::get('Forgot', function () {
